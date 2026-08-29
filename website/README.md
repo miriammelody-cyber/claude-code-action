@@ -40,8 +40,9 @@ hat leichte Hover-Effekte auf den Behandlungskarten – ganz ohne zusätzliche
 Bibliotheken, und mit automatischem Sicherheitsnetz, falls bei jemandem die
 Animation aus irgendeinem Grund nicht auslöst.
 
-Zwischen Hero und "Über mich" liegt eine dezente animierte Wellen-Grafik
-(Karibisches Meer) als optischer Übergang – reines CSS/SVG, keine Bilder.
+Zwischen Hero und "Über mich" liegt funkelndes, sanft bewegtes Wasser
+(Karibisches Meer) als optischer Übergang – animierte Lichtreflexionen und
+Glanzpunkte, reines CSS/SVG, keine Bilder.
 
 ## Signature Song
 
