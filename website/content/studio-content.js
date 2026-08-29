@@ -68,7 +68,28 @@ const STUDIO_CONTENT = {
   //  abgespielt, wie ein kurzes animiertes Bild/Reel – ohne Ton).
   //  Der ganze Bereich bleibt automatisch ausgeblendet, solange diese
   //  Liste leer ist.
-  gallery: [],
+  gallery: [
+    {
+      type: "video",
+      src: "assets/studio-eindruecke.mp4",
+      alt: "Kurzer Rundgang durchs M Beauty Studio",
+    },
+    {
+      type: "image",
+      src: "assets/studio-2.jpg",
+      alt: "Behandlungsraum mit Liege und Dachfenster",
+    },
+    {
+      type: "image",
+      src: "assets/studio-1.jpg",
+      alt: "Arbeitsplatz im Studio",
+    },
+    {
+      type: "image",
+      src: "assets/studio-3.jpg",
+      alt: "M Beauty Logo an der Studiowand",
+    },
+  ],
 
   // -------------------------------------------------------------
   // Kontakt – AUSSCHLIESSLICH WhatsApp & Instagram, keine Buchung
