@@ -19,20 +19,12 @@ mit `// TODO` kommentiert; solange sie leer sind, blendet die Seite die
 betroffenen Buttons/Zeilen automatisch aus bzw. zeigt im Impressum/Datenschutz
 eine rot markierte "TODO"-Markierung, statt falsche Angaben zu zeigen.
 
-## Offene Punkte
+## Status
 
-Alle wesentlichen Angaben (Name, Anschrift, Telefon, E-Mail, WhatsApp,
-Instagram, Öffnungszeiten, Hosting) sind ausgefüllt. Nur noch zum
-Gegenchecken:
-
-- **E-Mail-Adresse**: `infombeaitysuite@gmail.com` – bitte prüfen, ob das
-  wirklich so geschrieben ist (wirkt wie ein Tippfehler von "beauty").
-- Zwei Behandlungsnamen waren im Katalog-Screenshot abgeschnitten und wurden
-  sinngemäß ergänzt (in `content/studio-content.js` als Kommentar markiert):
-  "Auffüllen mit Verlängerung" und "Neumodellage Gel mit Verlängerung", sowie
-  "Augenbrauen zupfen" (hier unklar, ob noch etwas ergänzt werden soll).
-- Hosting ist auf **GitHub Pages** (kostenlos) ausgelegt – siehe Abschnitt
-  "Deployment" unten.
+Alle Angaben (Name, Anschrift, Telefon, E-Mail, WhatsApp, Instagram,
+Öffnungszeiten, alle Behandlungen, Hosting) sind ausgefüllt und bestätigt.
+Kein offener TODO mehr. Hosting ist auf **GitHub Pages** (kostenlos)
+ausgelegt – siehe Abschnitt "Deployment" unten.
 
 ## Lokal ansehen
 

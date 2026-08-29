@@ -69,8 +69,7 @@ const STUDIO_CONTENT = {
     instagramUrl: "https://www.instagram.com/m.beauty.beauty.studio.krefeld/",
     instagramHandle: "@m.beauty.beauty.studio.krefeld",
 
-    // Bitte Schreibweise selbst nochmal prüfen (wirkt wie "beaity" statt "beauty")
-    email: "infombeaitysuite@gmail.com",
+    email: "infombeautysuite@gmail.com",
 
     // "Nach Vereinbarung" statt fester Öffnungszeiten
     openingHours: [{ days: "Termine", hours: "nach Vereinbarung" }],
@@ -153,9 +152,7 @@ const STUDIO_CONTENT = {
           description: "Auffüllen deiner bestehenden Gelmodellage.",
         },
         {
-          // Name im Katalog abgeschnitten als "Auffüllen mit Verläng…" –
-          // hier zu "Auffüllen mit Verlängerung" ergänzt, bitte prüfen.
-          name: "Auffüllen mit Verlängerung",
+          name: "Gel Auffüllen mit Verlängerung",
           price: "50 €",
           duration: "ca. 120 Minuten",
           description: "Auffüllen inklusive Verlängerung der Nägel.",
@@ -213,12 +210,10 @@ const STUDIO_CONTENT = {
           description: "Farbauffrischung für definierte Augenbrauen.",
         },
         {
-          // Name im Katalog abgeschnitten als "Augenbrauen zupfen…" – bitte
-          // prüfen, ob noch etwas ergänzt werden soll (z. B. "& Formen").
-          name: "Augenbrauen zupfen",
+          name: "Augenbrauen zupfen/waxen",
           price: "10 €",
           duration: "ca. 15 Minuten",
-          description: "In Form gezupfte Augenbrauen.",
+          description: "In Form gezupfte oder gewaxte Augenbrauen.",
         },
         {
           name: "Brow Lift",
@@ -283,7 +278,7 @@ const STUDIO_CONTENT = {
     city: "Krefeld",
     country: "Deutschland",
 
-    email: "infombeaitysuite@gmail.com", // siehe Hinweis bei contact.email
+    email: "infombeautysuite@gmail.com",
     phone: "0176 23695948",
   },
 };
