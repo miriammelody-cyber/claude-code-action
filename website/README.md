@@ -40,6 +40,17 @@ hat leichte Hover-Effekte auf den Behandlungskarten – ganz ohne zusätzliche
 Bibliotheken, und mit automatischem Sicherheitsnetz, falls bei jemandem die
 Animation aus irgendeinem Grund nicht auslöst.
 
+Zwischen Hero und "Über mich" liegt eine dezente animierte Wellen-Grafik
+(Karibisches Meer) als optischer Übergang – reines CSS/SVG, keine Bilder.
+
+## Signature Song
+
+Oben rechts in der Navigation gibt es einen kleinen Musik-Button (♪). Der
+Song liegt in `assets/signature-song.mp3` und wird in `content/studio-
+content.js` im Abschnitt `music` eingetragen. Aus Browser-Richtlinien
+startet Musik mit Ton nie von selbst – der Button startet/stoppt sie bewusst
+per Klick. Wird `music.src` geleert, verschwindet der Button automatisch.
+
 ## Lokal ansehen
 
 Kein Build-Schritt nötig. Einfach im Ordner `website/` einen kleinen lokalen

@@ -22,22 +22,36 @@
           <span data-studio-name>M Beauty</span>
           <span class="brand-slogan" data-studio-slogan>Beauty Studio</span>
         </a>
-        <button
-          class="nav-toggle"
-          data-nav-toggle
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
-        <ul class="nav-links" data-nav-links>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li data-gallery-nav-item hidden><a href="#galerie">Galerie</a></li>
-          <li><a href="#behandlungen">Behandlungen</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-        </ul>
+        <div class="nav-right">
+          <ul class="nav-links" data-nav-links>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li data-gallery-nav-item hidden><a href="#galerie">Galerie</a></li>
+            <li><a href="#behandlungen">Behandlungen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+          </ul>
+          <div class="nav-controls">
+            <button
+              class="music-toggle"
+              data-music-toggle
+              hidden
+              aria-pressed="false"
+              aria-label="Musik abspielen"
+            >
+              <span class="music-icon" aria-hidden="true">♪</span>
+            </button>
+            <button
+              class="nav-toggle"
+              data-nav-toggle
+              aria-label="Menü öffnen"
+              aria-expanded="false"
+            >
+              ☰
+            </button>
+          </div>
+        </div>
       </nav>
+      <audio data-music-player loop preload="none"></audio>
     </header>
 
     <main id="top">
@@ -67,6 +81,37 @@
           >
         </div>
       </section>
+
+      <!-- Karibisches Meer – dezente Wellen-Animation als Übergang -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg
+          class="wave-layer wave-layer-back"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,70 C100,55 200,85 300,70 C400,55 500,85 600,70 C700,55 800,85 900,70 C1000,55 1100,85 1200,70 L1200,120 L0,120 Z"
+          ></path>
+        </svg>
+        <svg
+          class="wave-layer wave-layer-mid"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,85 C100,60 200,110 300,85 C400,60 500,110 600,85 C700,60 800,110 900,85 C1000,60 1100,110 1200,85 L1200,120 L0,120 Z"
+          ></path>
+        </svg>
+        <svg
+          class="wave-layer wave-layer-front"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,95 C100,72 200,118 300,95 C400,72 500,118 600,95 C700,72 800,118 900,95 C1000,72 1100,118 1200,95 L1200,120 L0,120 Z"
+          ></path>
+        </svg>
+      </div>
 
       <!-- Über mich -->
       <section id="ueber-uns" class="section-alt">

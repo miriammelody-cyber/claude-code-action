@@ -42,6 +42,18 @@ const STUDIO_CONTENT = {
   },
 
   // -------------------------------------------------------------
+  // Signature Song
+  // -------------------------------------------------------------
+  // Browser verbieten grundsätzlich automatisch startende Musik mit Ton –
+  // deshalb gibt es einen dezenten Button, den Besucher:innen bewusst
+  // antippen. Läuft danach in Dauerschleife, bis man ihn erneut antippt.
+  // Leer lassen ("" bei src), um den Button auszublenden.
+  music: {
+    src: "assets/signature-song.mp3",
+    label: "Musik",
+  },
+
+  // -------------------------------------------------------------
   // Über mich / Über das Studio
   // -------------------------------------------------------------
   about: {

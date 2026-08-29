@@ -1,7 +1,7 @@
 /* =================================================================
    M Beauty – Stylesheet
-   Farbwelt: Soft Luxury – Beige, Sand, Kaschmir, Ivory, Eiche,
-   dezentes Champagne/Roségold, sehr sparsames Soft Sea Blue.
+   Farbwelt: Soft Luxury – Beige, Leinen/Sand, Gold, Eiche, dezentes
+   Karibisches Meer (Türkis) als Wellen-Akzent zwischen Hero & Inhalt.
    Keine externen Schriftarten (Datenschutz: keine Google Fonts).
    ================================================================= */
 
@@ -11,15 +11,24 @@
 
 :root {
   --color-bg: #faf6f0; /* Ivory / Warm White */
-  --color-bg-alt: #f2e9dc; /* Sand */
+  --color-bg-alt: #f2e9dc; /* Sand / Leinen */
   --color-card: #ffffff;
   --color-text: #46392c; /* Eiche (dunkles Holzbraun) */
   --color-text-muted: #8a7a68;
   --color-border: #e6d9c4;
-  --color-accent: #b98d4f; /* Champagne / dezentes Gold */
+  --color-accent: #b98d4f; /* Champagne / Gold */
   --color-accent-soft: #e9dcc4; /* Kaschmir */
   --color-rose: #c9a3a0; /* dezentes Roségold / Dusty Rose */
-  --color-seablue: #a7c2c6; /* sehr dezentes Soft Sea Blue */
+  --color-seablue: #4f9b96; /* Karibisches Meer – Akzentfarbe */
+  --color-sea-light: #cfe7e1; /* Karibisches Meer, sehr hell (fernste Welle) */
+  --color-sea-mid: #8fc9c0; /* Karibisches Meer, mittel */
+  --color-sea-deep: #2e8f8a; /* Karibisches Meer, tief (nächste Welle) */
+  --color-sea-tint: rgba(
+    207,
+    231,
+    225,
+    0.4
+  ); /* sehr dezenter Meeresschimmer im Hero */
   --color-whatsapp: #3fa16d;
   --font-heading:
     Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
@@ -40,7 +49,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background:
+    linear-gradient(180deg, var(--color-sea-tint) 0%, rgba(0, 0, 0, 0) 100%)
+      top / 100% 600px no-repeat,
+    var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -94,6 +106,71 @@ a {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.music-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.music-toggle .music-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.music-toggle[aria-pressed="true"] {
+  color: #fff;
+  background: var(--color-seablue);
+  border-color: var(--color-seablue);
+}
+
+.music-toggle[aria-pressed="true"] .music-icon {
+  animation: music-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle[aria-pressed="true"] .music-icon {
+    animation: none;
+  }
 }
 
 .nav-links {
@@ -231,6 +308,65 @@ section {
 .section-header p {
   color: var(--color-text-muted);
   margin: 0;
+}
+
+/* ---------- Karibisches Meer – Wellen-Übergang ---------- */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  height: clamp(64px, 11vw, 130px);
+  overflow: hidden;
+}
+
+.wave-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  display: block;
+}
+
+.wave-layer path {
+  fill: var(--color-sea-light);
+}
+
+.wave-layer-mid path {
+  fill: var(--color-sea-mid);
+}
+
+.wave-layer-front path {
+  fill: var(--color-sea-deep);
+}
+
+.wave-layer-back {
+  opacity: 0.65;
+  animation: wave-drift 22s linear infinite;
+}
+
+.wave-layer-mid {
+  opacity: 0.8;
+  animation: wave-drift 15s linear infinite;
+}
+
+.wave-layer-front {
+  opacity: 0.95;
+  animation: wave-drift 10s linear infinite;
+}
+
+@keyframes wave-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-layer {
+    animation: none;
+  }
 }
 
 /* ---------- About / Über mich ---------- */
@@ -704,6 +840,7 @@ section {
     --color-border: #3c3025;
     --color-accent: #d8b077;
     --color-accent-soft: #4a3a26;
+    --color-sea-tint: transparent;
   }
 
   .site-header {

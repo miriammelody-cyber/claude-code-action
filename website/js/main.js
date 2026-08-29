@@ -12,6 +12,44 @@
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute("content", c.meta.description);
 
+  // ---- Signature-Song-Button ----
+  // Browser blockieren automatisch startende Musik mit Ton, deshalb
+  // startet der Song nur, wenn jemand aktiv auf den Button tippt.
+  const musicToggle = document.querySelector("[data-music-toggle]");
+  const musicPlayer = document.querySelector("[data-music-player]");
+  if (musicToggle && musicPlayer && c.music && c.music.src) {
+    musicPlayer.src = c.music.src;
+    musicToggle.removeAttribute("hidden");
+    musicToggle.setAttribute(
+      "aria-label",
+      (c.music.label || "Musik") + " abspielen",
+    );
+
+    musicToggle.addEventListener("click", () => {
+      if (musicPlayer.paused) {
+        musicPlayer.play().catch(() => {});
+      } else {
+        musicPlayer.pause();
+      }
+    });
+
+    musicPlayer.addEventListener("play", () => {
+      musicToggle.setAttribute("aria-pressed", "true");
+      musicToggle.setAttribute(
+        "aria-label",
+        (c.music.label || "Musik") + " pausieren",
+      );
+    });
+
+    musicPlayer.addEventListener("pause", () => {
+      musicToggle.setAttribute("aria-pressed", "false");
+      musicToggle.setAttribute(
+        "aria-label",
+        (c.music.label || "Musik") + " abspielen",
+      );
+    });
+  }
+
   // ---- Branding text ----
   document.querySelectorAll("[data-studio-name]").forEach((el) => {
     el.textContent = c.studio.name;
