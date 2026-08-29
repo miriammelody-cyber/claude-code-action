@@ -103,6 +103,41 @@
     }
   }
 
+  // ---- Studio gallery (photos & short muted looping videos) ----
+  const gallerySection = document.querySelector("[data-gallery-section]");
+  const galleryGrid = document.querySelector("[data-gallery-grid]");
+  const galleryNavItem = document.querySelector("[data-gallery-nav-item]");
+  const gallery = c.gallery || [];
+  if (gallerySection && galleryGrid && gallery.length > 0) {
+    gallerySection.removeAttribute("hidden");
+    if (galleryNavItem) galleryNavItem.removeAttribute("hidden");
+    galleryGrid.innerHTML = gallery.map(renderGalleryItem).join("");
+  }
+
+  function renderGalleryItem(item) {
+    const alt = escapeHtml(item.alt || "");
+    if (item.type === "video") {
+      return (
+        '<div class="gallery-item" data-reveal>' +
+        '<video src="' +
+        escapeHtml(item.src) +
+        '" autoplay muted loop playsinline preload="metadata" aria-label="' +
+        alt +
+        '"></video>' +
+        "</div>"
+      );
+    }
+    return (
+      '<div class="gallery-item" data-reveal>' +
+      '<img src="' +
+      escapeHtml(item.src) +
+      '" alt="' +
+      alt +
+      '" loading="lazy" />' +
+      "</div>"
+    );
+  }
+
   // ---- Treatment categories ----
   const wrapper = document.querySelector("[data-treatment-categories]");
   if (wrapper) {
@@ -188,4 +223,39 @@
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
   });
+
+  // ---- Subtle scroll-reveal animation ----
+  // Elements marked with data-reveal (in the HTML or rendered above)
+  // fade/slide in once they enter the viewport. Respects users who
+  // asked their system for reduced motion, and degrades gracefully
+  // (content stays fully visible) if IntersectionObserver is missing.
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const revealTargets = document.querySelectorAll("[data-reveal]");
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+    );
+    revealTargets.forEach((el) => {
+      el.classList.add("reveal");
+      observer.observe(el);
+    });
+
+    // Safety net: content must never stay invisible. If something
+    // wasn't revealed by scrolling within a few seconds (e.g. the
+    // user jumped straight to a deep link, or a browser quirk), show
+    // it anyway.
+    setTimeout(() => {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    }, 2500);
+  }
 })();

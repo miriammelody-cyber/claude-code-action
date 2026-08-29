@@ -56,6 +56,21 @@ const STUDIO_CONTENT = {
   },
 
   // -------------------------------------------------------------
+  // Studio-Galerie (Fotos & kurze Videos)
+  // -------------------------------------------------------------
+  // So fügst du eigene Fotos/Videos hinzu:
+  //  1. Datei (z. B. "studio-1.jpg" oder "eindruecke.mp4") in den
+  //     Ordner "assets/" legen.
+  //  2. Hier unten einen neuen Eintrag hinzufügen, z. B.:
+  //     { type: "image", src: "assets/studio-1.jpg", alt: "Empfangsbereich im Studio" },
+  //     { type: "video", src: "assets/eindruecke.mp4", alt: "Kurzer Rundgang durchs Studio" },
+  //  Bilder: jpg/png/webp. Videos: mp4 (werden stumm & in Dauerschleife
+  //  abgespielt, wie ein kurzes animiertes Bild/Reel – ohne Ton).
+  //  Der ganze Bereich bleibt automatisch ausgeblendet, solange diese
+  //  Liste leer ist.
+  gallery: [],
+
+  // -------------------------------------------------------------
   // Kontakt – AUSSCHLIESSLICH WhatsApp & Instagram, keine Buchung
   // -------------------------------------------------------------
   contact: {

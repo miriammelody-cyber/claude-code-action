@@ -26,6 +26,20 @@ Alle Angaben (Name, Anschrift, Telefon, E-Mail, WhatsApp, Instagram,
 Kein offener TODO mehr. Hosting ist auf **GitHub Pages** (kostenlos)
 ausgelegt – siehe Abschnitt "Deployment" unten.
 
+## Fotos & Videos hinzufügen
+
+Eigene Bilder oder kurze Videos vom Studio landen im Ordner `assets/`.
+Danach in `content/studio-content.js` im Abschnitt `gallery` einen Eintrag
+ergänzen (Beispiel steht direkt daneben als Kommentar). Der Galerie-Bereich
+auf der Startseite erscheint automatisch, sobald dort mindestens ein Eintrag
+steht – vorher bleibt er unsichtbar. Fotos (jpg/png/webp) und kurze, stumme
+Video-Loops (mp4) werden unterstützt.
+
+Die Seite blendet Inhalte beim Scrollen sanft ein (dezente Animation) und
+hat leichte Hover-Effekte auf den Behandlungskarten – ganz ohne zusätzliche
+Bibliotheken, und mit automatischem Sicherheitsnetz, falls bei jemandem die
+Animation aus irgendeinem Grund nicht auslöst.
+
 ## Lokal ansehen
 
 Kein Build-Schritt nötig. Einfach im Ordner `website/` einen kleinen lokalen

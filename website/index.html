@@ -32,6 +32,7 @@
         </button>
         <ul class="nav-links" data-nav-links>
           <li><a href="#ueber-uns">Über uns</a></li>
+          <li data-gallery-nav-item hidden><a href="#galerie">Galerie</a></li>
           <li><a href="#behandlungen">Behandlungen</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
@@ -71,7 +72,7 @@
       <section id="ueber-uns" class="section-alt">
         <div class="container">
           <div class="about">
-            <div class="about-card">
+            <div class="about-card" data-reveal>
               <div class="about-role">Inhaberin</div>
               <h3 data-owner-name>Miriam Melody Hilgeland</h3>
               <p data-about-text>
@@ -79,7 +80,7 @@
                 von M Beauty in Krefeld.
               </p>
             </div>
-            <div class="about-card">
+            <div class="about-card" data-reveal>
               <div class="section-eyebrow">Das Studio</div>
               <h3><span data-studio-name>M Beauty</span></h3>
               <p>
@@ -91,6 +92,17 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Galerie -->
+      <section id="galerie" data-gallery-section hidden>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Eindrücke</div>
+            <h2>Aus dem Studio</h2>
+          </div>
+          <div class="gallery-grid" data-gallery-grid></div>
         </div>
       </section>
 
