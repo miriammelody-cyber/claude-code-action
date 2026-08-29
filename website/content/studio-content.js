@@ -47,12 +47,58 @@ const STUDIO_CONTENT = {
   about: {
     ownerName: "Miriam Melody Hilgeland",
 
-    // TODO: Dein eigener Text über dich und das Studio.
-    // Der folgende Text ist nur ein Platzhalter-Entwurf.
-    text:
-      "Mein Name ist Miriam Melody Hilgeland und ich bin die Inhaberin von M Beauty in Krefeld. " +
-      "In meinem Studio dreht sich alles um hochwertige Gesichtsbehandlungen und individuelle Beauty-Pflege – " +
-      "persönlich, aufmerksam und auf deine Haut abgestimmt. Ich freue mich, dich bei mir im Studio begrüßen zu dürfen.",
+    intro: {
+      heading:
+        "Hallo, ich bin Miri – Gründerin und das Gesicht hinter M Beauty.",
+      paragraphs: [
+        "Ich bin Mama von zwei Jungs, ehemalige OP-Schwester und seit 2014 im Beautybereich tätig. Was damals mit Nageldesign als Nebentätigkeit begann, entwickelte sich über die Jahre zu meiner großen Leidenschaft.",
+        "Meine Erfahrung aus dem medizinischen Bereich prägt meine Arbeit bis heute: Präzision, Hygiene und ein geschulter Blick für Ästhetik sind für mich selbstverständlich.",
+        "Mit M Beauty habe ich einen Ort geschaffen, an dem professionelle Beautybehandlungen und persönliche Auszeit zusammenkommen. In meinem Homestudio erwartet dich eine ruhige, entspannte Atmosphäre mit individueller Beratung und viel Liebe zum Detail.",
+        "Mein Ziel ist es, deine natürliche Schönheit zu unterstreichen und dir eine kleine Pause vom Alltag zu schenken.",
+        "Ich freue mich darauf, dich bei M Beauty willkommen zu heißen.",
+      ],
+      signature: "Deine Miri",
+      tagline: "Natürlich. Gepflegt. Mit Liebe zum Detail.",
+    },
+
+    werdegang: {
+      heading: "Mein Werdegang",
+      paragraphs: [
+        "2014 begann meine Reise im Beautybereich mit dem Nageldesign und meinem eigenen Nebengewerbe.",
+        "Parallel dazu war ich viele Jahre im medizinischen Bereich und als OP-Schwester tätig. Diese Zeit hat meine Arbeitsweise nachhaltig geprägt – insbesondere meinen Anspruch an Hygiene, Präzision und sorgfältiges Arbeiten.",
+        "Mit der Zeit wuchs der Wunsch, meine Leidenschaft für Beauty wieder stärker in den Mittelpunkt zu stellen. Heute widme ich mich mit M Beauty meinem Herzensprojekt und entwickle mein Wissen durch regelmäßige Fort- und Weiterbildungen kontinuierlich weiter.",
+        "Aus einer Nebentätigkeit wurde eine Leidenschaft – und schließlich M Beauty.",
+      ],
+    },
+
+    qualifications: {
+      heading: "Qualifikationen",
+      items: [
+        "Langjährige Erfahrung im medizinischen Bereich und als OP-Schwester",
+        "Zertifizierte in Nageldesign seit 2014",
+        "Zertifiziertes Lash Lift",
+        "Zertifiziertes Brow Lift",
+        "Zertifiziertes Korean Lash Lift",
+        "Zertifizierung Fruchtsäurepeeling",
+        "Zertifizierung Diamant-Microdermabrasion",
+        "Zertifizierung Microneedling",
+        "Zertifizierung Ultraschall (NISV frei)",
+        "Weiterbildung zur geprüften Kosmetikerin",
+        "Fachgerechte Hygiene- und Desinfektionsstandards",
+        "Regelmäßige Fort- und Weiterbildungen im Beautybereich",
+      ],
+    },
+
+    philosophy: {
+      heading: "Meine Philosophie",
+      paragraphs: [
+        "Schönheit bedeutet für mich nicht, sich zu verändern, sondern die eigene natürliche Schönheit hervorzuheben.",
+        "Bei M Beauty stehen Qualität, Wohlbefinden und persönliche Betreuung im Mittelpunkt. Jede Behandlung soll nicht nur ein schönes Ergebnis schaffen, sondern auch eine kleine Auszeit vom Alltag sein.",
+        "Durch meinen medizinischen Hintergrund lege ich besonderen Wert auf Hygiene, Präzision und sorgfältiges Arbeiten. Gleichzeitig möchte ich eine Atmosphäre schaffen, in der du dich willkommen, entspannt und gut aufgehoben fühlst.",
+        "Mein Anspruch sind natürliche, typgerechte Ergebnisse, die zu dir passen – professionell umgesetzt und mit Liebe zum Detail.",
+      ],
+      closingTagline: "Natürlich. Schön. Du.",
+    },
   },
 
   // -------------------------------------------------------------

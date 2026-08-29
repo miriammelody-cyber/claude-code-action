@@ -22,15 +22,77 @@
   document.querySelectorAll("[data-hero-text]").forEach((el) => {
     el.textContent = c.studio.heroText;
   });
-  document.querySelectorAll("[data-about-text]").forEach((el) => {
-    el.textContent = c.about.text;
-  });
-  document.querySelectorAll("[data-owner-name]").forEach((el) => {
-    el.textContent = c.about.ownerName;
-  });
   document.querySelectorAll("[data-city]").forEach((el) => {
     el.textContent = c.studio.city;
   });
+
+  // ---- Über mich (Vorstellung, Werdegang, Qualifikationen, Philosophie) ----
+  function renderParagraphs(paragraphs) {
+    return (paragraphs || [])
+      .map((p) => "<p>" + escapeHtml(p) + "</p>")
+      .join("");
+  }
+
+  const about = c.about || {};
+
+  if (about.intro) {
+    document.querySelectorAll("[data-about-intro-heading]").forEach((el) => {
+      el.textContent = about.intro.heading || "";
+    });
+    document.querySelectorAll("[data-about-intro-paragraphs]").forEach((el) => {
+      el.innerHTML = renderParagraphs(about.intro.paragraphs);
+    });
+    document.querySelectorAll("[data-about-signature]").forEach((el) => {
+      el.textContent = about.intro.signature || "";
+    });
+    document.querySelectorAll("[data-about-tagline]").forEach((el) => {
+      el.textContent = about.intro.tagline || "";
+    });
+  }
+
+  if (about.werdegang) {
+    document
+      .querySelectorAll("[data-about-werdegang-heading]")
+      .forEach((el) => {
+        el.textContent = about.werdegang.heading || "";
+      });
+    document
+      .querySelectorAll("[data-about-werdegang-paragraphs]")
+      .forEach((el) => {
+        el.innerHTML = renderParagraphs(about.werdegang.paragraphs);
+      });
+  }
+
+  if (about.qualifications) {
+    document
+      .querySelectorAll("[data-about-qualifications-heading]")
+      .forEach((el) => {
+        el.textContent = about.qualifications.heading || "";
+      });
+    document.querySelectorAll("[data-about-qualifications]").forEach((el) => {
+      el.innerHTML = (about.qualifications.items || [])
+        .map((item) => "<li>" + escapeHtml(item) + "</li>")
+        .join("");
+    });
+  }
+
+  if (about.philosophy) {
+    document
+      .querySelectorAll("[data-about-philosophy-heading]")
+      .forEach((el) => {
+        el.textContent = about.philosophy.heading || "";
+      });
+    document
+      .querySelectorAll("[data-about-philosophy-paragraphs]")
+      .forEach((el) => {
+        el.innerHTML = renderParagraphs(about.philosophy.paragraphs);
+      });
+    document
+      .querySelectorAll("[data-about-philosophy-tagline]")
+      .forEach((el) => {
+        el.textContent = about.philosophy.closingTagline || "";
+      });
+  }
 
   // ---- WhatsApp / Instagram links ----
   const waNumber = (c.contact.whatsappNumber || "").replace(/[^0-9]/g, "");
