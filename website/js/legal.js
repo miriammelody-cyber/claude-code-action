@@ -70,4 +70,14 @@
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
   });
+
+  // Show the "red fields are still missing" legend only while at least
+  // one real TODO flag is present on the page.
+  const legend = document.querySelector("[data-todo-legend]");
+  if (legend) {
+    const realTodos = Array.from(
+      document.querySelectorAll(".todo-flag"),
+    ).filter((el) => !el.closest("[data-todo-legend]"));
+    if (realTodos.length > 0) legend.removeAttribute("hidden");
+  }
 })();

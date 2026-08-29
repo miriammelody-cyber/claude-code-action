@@ -89,6 +89,7 @@
     if (hours.length === 0) {
       hoursList.setAttribute("hidden", "hidden");
     } else {
+      hoursList.removeAttribute("hidden");
       hoursList.innerHTML = hours
         .map(
           (h) =>

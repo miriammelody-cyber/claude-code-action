@@ -19,19 +19,20 @@ mit `// TODO` kommentiert; solange sie leer sind, blendet die Seite die
 betroffenen Buttons/Zeilen automatisch aus bzw. zeigt im Impressum/Datenschutz
 eine rot markierte "TODO"-Markierung, statt falsche Angaben zu zeigen.
 
-## Offene TODOs (noch von dir auszufüllen)
+## Offene Punkte
 
-- **Offizieller Name**: "M Beauty" oder "M Beauty Nails Lashes Brows"? (`studio.name` / `legal.businessName`)
-- **Anschrift**: Straße, Hausnummer, PLZ (`legal.street`, `legal.houseNumber`, `legal.postalCode`)
-- **Telefon** (`legal.phone`)
-- **E-Mail**: vermutlich `hallo@m-beauty.de` – bitte bestätigen (`contact.email` / `legal.email`)
-- **WhatsApp-Nummer** im Format `4915123456789` (`contact.whatsappNumber`)
-- **Instagram-Link** (`contact.instagramUrl`, `contact.instagramHandle`)
-- **Öffnungszeiten** (`contact.openingHours`)
-- Weitere Behandlungen (Nails, Lash Lift/Brow Lift, Waxing/Sugaring) inkl. Preis & Dauer
-- **Hosting**: Sobald klar ist, wo die Seite gehostet wird, bitte Abschnitt 3
-  in `datenschutz.html` ("Hosting / Server-Logfiles") um Name/Anschrift des
-  Anbieters ergänzen.
+Alle wesentlichen Angaben (Name, Anschrift, Telefon, E-Mail, WhatsApp,
+Instagram, Öffnungszeiten, Hosting) sind ausgefüllt. Nur noch zum
+Gegenchecken:
+
+- **E-Mail-Adresse**: `infombeaitysuite@gmail.com` – bitte prüfen, ob das
+  wirklich so geschrieben ist (wirkt wie ein Tippfehler von "beauty").
+- Zwei Behandlungsnamen waren im Katalog-Screenshot abgeschnitten und wurden
+  sinngemäß ergänzt (in `content/studio-content.js` als Kommentar markiert):
+  "Auffüllen mit Verlängerung" und "Neumodellage Gel mit Verlängerung", sowie
+  "Augenbrauen zupfen" (hier unklar, ob noch etwas ergänzt werden soll).
+- Hosting ist auf **GitHub Pages** (kostenlos) ausgelegt – siehe Abschnitt
+  "Deployment" unten.
 
 ## Lokal ansehen
 

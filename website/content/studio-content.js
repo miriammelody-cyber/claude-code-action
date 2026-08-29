@@ -31,7 +31,7 @@ const STUDIO_CONTENT = {
   // Studio / Hero-Bereich
   // -------------------------------------------------------------
   studio: {
-    name: "M Beauty", // TODO: Bitte bestätigen – im alten System auch "M Beauty Nails Lashes Brows" gefunden. Welcher Name soll überall stehen?
+    name: "M Beauty",
     slogan: "Beauty Studio",
     city: "Krefeld",
     region: "Nordrhein-Westfalen",
@@ -59,28 +59,21 @@ const STUDIO_CONTENT = {
   // Kontakt – AUSSCHLIESSLICH WhatsApp & Instagram, keine Buchung
   // -------------------------------------------------------------
   contact: {
-    // TODO: Deine WhatsApp-Nummer im internationalen Format ohne
-    // Leerzeichen und ohne "+" eintragen, z. B. für 0151 23456789
-    // würdest du hier "4915123456789" eintragen.
-    whatsappNumber: "",
+    // Internationales Format ohne Leerzeichen/"+" (0176... -> 4917623695948)
+    whatsappNumber: "4917623695948",
 
     // Vorausgefüllter Text, der beim Öffnen von WhatsApp erscheint
     whatsappPrefillMessage:
       "Hallo M Beauty, ich interessiere mich für eine Behandlung und würde gerne mehr erfahren.",
 
-    // TODO: Link zu deinem Instagram-Profil, z. B. "https://instagram.com/deinprofil"
-    instagramUrl: "",
-    instagramHandle: "", // z. B. "@mbeauty.krefeld" – wird als Text auf der Seite angezeigt
+    instagramUrl: "https://www.instagram.com/m.beauty.beauty.studio.krefeld/",
+    instagramHandle: "@m.beauty.beauty.studio.krefeld",
 
-    // TODO: E-Mail-Adresse. Im alten System wurde "hallo@m-beauty.de"
-    // gefunden, aber bitte bestätigen, ob das aktuell noch stimmt.
-    email: "",
+    // Bitte Schreibweise selbst nochmal prüfen (wirkt wie "beaity" statt "beauty")
+    email: "infombeaitysuite@gmail.com",
 
-    // TODO: Öffnungszeiten wurden im Datenexport nirgends gefunden.
-    // Beispiel-Format zum Ausfüllen:
-    // { days: "Di – Fr", hours: "10:00 – 18:00 Uhr" },
-    // { days: "Sa", hours: "10:00 – 14:00 Uhr" },
-    openingHours: [],
+    // "Nach Vereinbarung" statt fester Öffnungszeiten
+    openingHours: [{ days: "Termine", hours: "nach Vereinbarung" }],
   },
 
   // -------------------------------------------------------------
@@ -150,24 +143,128 @@ const STUDIO_CONTENT = {
       ],
     },
     {
-      // TODO: Preise & Dauer für Nageldesign/Gelmodellage ergänzen,
-      // sobald bestätigt – Kategorie bleibt bis dahin ausgeblendet.
       id: "nails",
       name: "Nageldesign / Gelmodellage",
-      treatments: [],
+      treatments: [
+        {
+          name: "Auffüllen Gel",
+          price: "40 €",
+          duration: "ca. 90 Minuten",
+          description: "Auffüllen deiner bestehenden Gelmodellage.",
+        },
+        {
+          // Name im Katalog abgeschnitten als "Auffüllen mit Verläng…" –
+          // hier zu "Auffüllen mit Verlängerung" ergänzt, bitte prüfen.
+          name: "Auffüllen mit Verlängerung",
+          price: "50 €",
+          duration: "ca. 120 Minuten",
+          description: "Auffüllen inklusive Verlängerung der Nägel.",
+        },
+        {
+          name: "Neumodellage Gel",
+          price: "40 €",
+          duration: "ca. 90 Minuten",
+          description: "Komplett neue Gelmodellage.",
+        },
+        {
+          // Name im Katalog abgeschnitten als "Neumodellage Gel mi…" –
+          // hier zu "Neumodellage Gel mit Verlängerung" ergänzt, bitte prüfen.
+          name: "Neumodellage Gel mit Verlängerung",
+          price: "60 €",
+          duration: "ca. 120 Minuten",
+          description: "Komplett neue Gelmodellage inklusive Verlängerung.",
+        },
+      ],
     },
     {
-      // TODO: Preise & Dauer für Lash Lift, Brow Lift, Wimpern-/
-      // Augenbrauenfärben ergänzen.
-      id: "lashes-brows",
-      name: "Lash Lift, Brow Lift & Färben",
-      treatments: [],
+      id: "wimpern",
+      name: "Wimpern",
+      treatments: [
+        {
+          name: "Lash-Lift",
+          price: "45 €",
+          duration: "ca. 60 Minuten",
+          description:
+            "Wimpernwelle für einen natürlich geschwungenen Blick ohne Extensions.",
+        },
+        {
+          name: "Korean-Lash-Lift",
+          price: "69 €",
+          duration: "ca. 60 Minuten",
+          description:
+            "Aufwendigere Lash-Lift-Technik für ein besonders volumigeres Ergebnis.",
+        },
+        {
+          name: "Wimpern Färben",
+          price: "12 €",
+          duration: "ca. 15 Minuten",
+          description: "Färben der Wimpern für einen betonten Blick.",
+        },
+      ],
     },
     {
-      // TODO: Preise & Dauer für Waxing/Sugaring ergänzen.
+      id: "augenbrauen",
+      name: "Augenbrauen",
+      treatments: [
+        {
+          name: "Augenbrauen färben",
+          price: "10 €",
+          duration: "ca. 10 Minuten",
+          description: "Farbauffrischung für definierte Augenbrauen.",
+        },
+        {
+          // Name im Katalog abgeschnitten als "Augenbrauen zupfen…" – bitte
+          // prüfen, ob noch etwas ergänzt werden soll (z. B. "& Formen").
+          name: "Augenbrauen zupfen",
+          price: "10 €",
+          duration: "ca. 15 Minuten",
+          description: "In Form gezupfte Augenbrauen.",
+        },
+        {
+          name: "Brow Lift",
+          price: "40 €",
+          duration: "ca. 60 Minuten",
+          description:
+            "Brow Lift für einen aufgerichteten, definierten Augenbrauenschwung.",
+        },
+        {
+          name: "Korean Brow Lift",
+          price: "59 €",
+          duration: "ca. 60 Minuten",
+          description:
+            "Aufwendigere Brow-Lift-Technik für ein besonders natürliches Ergebnis.",
+        },
+      ],
+    },
+    {
+      id: "haende",
+      name: "Hände",
+      treatments: [
+        {
+          name: "Handmassage",
+          price: "10 €",
+          duration: "ca. 10 Minuten",
+          description: "Entspannende Handmassage.",
+        },
+        {
+          name: "Paraffinbad Hände",
+          price: "30 €",
+          duration: "ca. 60 Minuten",
+          description: "Pflegendes Paraffinbad für geschmeidige Hände.",
+        },
+      ],
+    },
+    {
       id: "waxing",
       name: "Waxing / Sugaring",
-      treatments: [],
+      treatments: [
+        {
+          name: "Oberlippe waxen",
+          price: "8 €",
+          duration: "ca. 5 Minuten",
+          description: "Waxing der Oberlippe.",
+        },
+      ],
     },
   ],
 
@@ -176,18 +273,18 @@ const STUDIO_CONTENT = {
   // -------------------------------------------------------------
   legal: {
     ownerFullName: "Miriam Melody Hilgeland",
-    businessName: "", // TODO: siehe Hinweis oben bei "studio.name"
+    businessName: "M Beauty - Beauty Studio",
     legalForm: "Einzelunternehmen",
     kleinunternehmer: true, // Kleinunternehmerregelung gem. § 19 UStG
 
-    street: "", // TODO
-    houseNumber: "", // TODO
-    postalCode: "", // TODO
+    street: "Winnertzweg",
+    houseNumber: "10",
+    postalCode: "47803",
     city: "Krefeld",
     country: "Deutschland",
 
-    email: "", // TODO (siehe contact.email)
-    phone: "", // TODO
+    email: "infombeaitysuite@gmail.com", // siehe Hinweis bei contact.email
+    phone: "0176 23695948",
   },
 };
 
