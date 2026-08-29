@@ -1,8 +1,7 @@
 /* =================================================================
    M Beauty – Stylesheet
-   Farbwelt: Soft Luxury – Beige, Leinen/Sand, Gold, Eiche, funkelndes
-   Karibisches Meer (Sonnenlicht auf Wasser) als Akzent zwischen Hero
-   & Inhalt. Keine externen Schriftarten (Datenschutz: keine Google Fonts).
+   Farbwelt: Soft Luxury – Beige, Leinen/Sand, Gold, Eiche.
+   Keine externen Schriftarten (Datenschutz: keine Google Fonts).
    ================================================================= */
 
 [hidden] {
@@ -20,15 +19,6 @@
   --color-accent-soft: #e9dcc4; /* Kaschmir */
   --color-rose: #c9a3a0; /* dezentes Roségold / Dusty Rose */
   --color-seablue: #4f9b96; /* dezenter Akzent (z. B. Musik-Button aktiv) */
-  --color-water-a: #eef2ea; /* funkelndes Wasser – helles Türkis-Weiß oben */
-  --color-water-b: #b9d9d0; /* funkelndes Wasser – warmes Aqua unten */
-  --color-water-glint: #fdf4dd; /* warmgoldene Sonnenlicht-Glanzpunkte */
-  --color-sea-tint: rgba(
-    207,
-    231,
-    225,
-    0.4
-  ); /* sehr dezenter Meeresschimmer im Hero */
   --color-whatsapp: #3fa16d;
   --font-heading:
     Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
@@ -49,10 +39,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(180deg, var(--color-sea-tint) 0%, rgba(0, 0, 0, 0) 100%)
-      top / 100% 600px no-repeat,
-    var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -310,168 +297,19 @@ section {
   margin: 0;
 }
 
-/* ---------- Karibisches Meer – funkelndes Wasser ---------- */
-.water-shimmer {
-  position: relative;
+/* ---------- Logo-Band ---------- */
+.logo-band {
+  display: flex;
+  justify-content: center;
+  padding: 44px 20px;
+  background: var(--color-bg-alt);
+}
+
+.logo-band-img {
   width: 100%;
-  height: clamp(90px, 15vw, 200px);
-  overflow: hidden;
-  background: var(--color-water-a);
-}
-
-.water-shimmer-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.water-ribbons {
-  mix-blend-mode: screen;
-  opacity: 0.9;
-}
-
-.water-glint {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #ffffff 0%,
-    var(--color-water-glint) 45%,
-    rgba(255, 255, 255, 0) 75%
-  );
-  filter: blur(0.5px);
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: screen;
-  animation: glint-twinkle 5s ease-in-out infinite;
-}
-
-.water-glint-1 {
-  top: 18%;
-  left: 8%;
-  width: 30px;
-  height: 30px;
-  animation-duration: 4.2s;
-  animation-delay: 0s;
-}
-
-.water-glint-2 {
-  top: 60%;
-  left: 18%;
-  width: 16px;
-  height: 16px;
-  animation-duration: 3.4s;
-  animation-delay: 1.1s;
-}
-
-.water-glint-3 {
-  top: 32%;
-  left: 30%;
-  width: 40px;
-  height: 40px;
-  animation-duration: 5.6s;
-  animation-delay: 0.4s;
-}
-
-.water-glint-4 {
-  top: 70%;
-  left: 42%;
-  width: 22px;
-  height: 22px;
-  animation-duration: 3.9s;
-  animation-delay: 2s;
-}
-
-.water-glint-5 {
-  top: 20%;
-  left: 52%;
-  width: 26px;
-  height: 26px;
-  animation-duration: 4.9s;
-  animation-delay: 1.6s;
-}
-
-.water-glint-6 {
-  top: 48%;
-  left: 60%;
-  width: 34px;
-  height: 34px;
-  animation-duration: 4.4s;
-  animation-delay: 0.8s;
-}
-
-.water-glint-7 {
-  top: 66%;
-  left: 68%;
-  width: 18px;
-  height: 18px;
-  animation-duration: 3.2s;
-  animation-delay: 2.6s;
-}
-
-.water-glint-8 {
-  top: 24%;
-  left: 76%;
-  width: 44px;
-  height: 44px;
-  animation-duration: 6.1s;
-  animation-delay: 1.3s;
-}
-
-.water-glint-9 {
-  top: 55%;
-  left: 84%;
-  width: 20px;
-  height: 20px;
-  animation-duration: 3.7s;
-  animation-delay: 3.1s;
-}
-
-.water-glint-10 {
-  top: 12%;
-  left: 92%;
-  width: 24px;
-  height: 24px;
-  animation-duration: 4.6s;
-  animation-delay: 0.2s;
-}
-
-.water-glint-11 {
-  top: 80%;
-  left: 24%;
-  width: 20px;
-  height: 20px;
-  animation-duration: 4s;
-  animation-delay: 2.3s;
-}
-
-.water-glint-12 {
-  top: 40%;
-  left: 90%;
-  width: 16px;
-  height: 16px;
-  animation-duration: 3.5s;
-  animation-delay: 1.9s;
-}
-
-@keyframes glint-twinkle {
-  0%,
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .water-glint {
-    animation: none;
-    opacity: 0.35;
-    transform: none;
-  }
+  max-width: 280px;
+  height: auto;
+  border-radius: 10px;
 }
 
 /* ---------- About / Über mich ---------- */
@@ -643,7 +481,7 @@ section {
   padding: 4px 12px;
   border-radius: 999px;
   background: var(--color-accent-soft);
-  color: #5a4626;
+  color: var(--color-text);
   font-size: 0.78rem;
   font-weight: 600;
 }
@@ -945,7 +783,6 @@ section {
     --color-border: #3c3025;
     --color-accent: #d8b077;
     --color-accent-soft: #4a3a26;
-    --color-sea-tint: transparent;
   }
 
   .site-header {

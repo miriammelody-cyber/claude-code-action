@@ -303,26 +303,6 @@
     });
   }
 
-  // ---- Funkelndes Wasser (Karibisches Meer) ----
-  // Die Lichtreflexionen entstehen über eine animierte SVG-Textur
-  // (feTurbulence). Bei "Bewegung reduzieren" bleibt das Wasser als
-  // ruhige, unbewegte Textur stehen statt zu animieren.
-  const waterTurbulence = document.querySelector("[data-water-turbulence]");
-  if (
-    waterTurbulence &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) {
-    const animate = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "animate",
-    );
-    animate.setAttribute("attributeName", "baseFrequency");
-    animate.setAttribute("values", "0.006 0.025;0.009 0.032;0.006 0.025");
-    animate.setAttribute("dur", "26s");
-    animate.setAttribute("repeatCount", "indefinite");
-    waterTurbulence.appendChild(animate);
-  }
-
   // ---- Mobile nav toggle ----
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navLinks = document.querySelector("[data-nav-links]");
