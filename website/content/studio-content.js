@@ -171,6 +171,22 @@ const STUDIO_CONTENT = {
   },
 
   // -------------------------------------------------------------
+  // Verbindliche Buchung & Anzahlung
+  // -------------------------------------------------------------
+  // Gilt für Behandlungen und Skin Journeys mit fest inkludierter
+  // Homecare. Die konkrete Anzahlungshöhe steht direkt beim jeweiligen
+  // Angebot (Feld "deposit" bei den Kuren/Journeys/M Microneedling PRO).
+  depositPolicy: {
+    heading: "Verbindliche Buchung & Anzahlung",
+    paragraphs: [
+      "Bei Behandlungen und Skin Journeys mit inkludierter Homecare ist zur verbindlichen Reservierung eine Anzahlung erforderlich.",
+      "Die Anzahlung wird vollständig auf den gebuchten Gesamtpreis angerechnet.",
+      "Der Termin gilt erst nach Eingang der Anzahlung als verbindlich bestätigt.",
+    ],
+    note: "Die Höhe der Anzahlung richtet sich nach dem jeweils enthaltenen Homecare-Paket.",
+  },
+
+  // -------------------------------------------------------------
   // Behandlungen nach Kategorien
   // -------------------------------------------------------------
   // Jede Kategorie mit leerem "treatments"-Array wird auf der
@@ -284,18 +300,26 @@ const STUDIO_CONTENT = {
             "Die Behandlung wird individuell an Hautzustand und Behandlungsziel angepasst.",
           besonderheiten:
             "Bei einer normalen Einzelbuchung ist ein kleines CNC MED HYAL Nachsorge-Kit für zuhause inklusive.",
+          // Direkt sichtbar auf der Karte (nicht hinter "Mehr erfahren"),
+          // da fest inkludierte Homecare + Anzahlungspflicht.
+          homecareIncluded: "Inklusive CNC MED HYAL Nachsorge-Kit.",
+          deposit: "20 €",
           kuren: [
             {
               name: "Microneedling 3er-Kur",
               price: "449 €",
               regularValue: "477 €",
               regularValueNote: "Regulärer Einzelwert: 3 × 159 €",
+              homecareIncluded: "inkl. abgestimmter MED HYAL Homecare",
+              deposit: "60 €",
             },
             {
               name: "Microneedling 6er-Kur",
               price: "849 €",
               regularValue: "954 €",
               regularValueNote: "Regulärer Einzelwert: 6 × 159 €",
+              homecareIncluded: "inkl. abgestimmter MED HYAL Homecare",
+              deposit: "60 €",
             },
           ],
           kurenHinweis:
@@ -504,6 +528,7 @@ const STUDIO_CONTENT = {
           wert: "110 €",
         },
         regulaererGesamtwert: "616 €",
+        deposit: "60 €",
       },
       {
         id: "comfort",
@@ -527,6 +552,7 @@ const STUDIO_CONTENT = {
           wert: "88,80 €",
         },
         regulaererGesamtwert: "554,80 €",
+        deposit: "45 €",
       },
       {
         id: "age-firm-pro",
@@ -554,6 +580,7 @@ const STUDIO_CONTENT = {
           wert: "181,90 €",
         },
         regulaererGesamtwert: "807,90 €",
+        deposit: "95 €",
         hinweis:
           "Innerhalb der Complete Journey wird bei den enthaltenen Microneedling-Terminen nicht zusätzlich pro Termin das kleine MED-HYAL-Kit ausgegeben, da bereits die Fullsize-Homecare enthalten ist.",
       },
@@ -583,6 +610,7 @@ const STUDIO_CONTENT = {
           wert: "115,70 €",
         },
         regulaererGesamtwert: "653,70 €",
+        deposit: "60 €",
         hinweis:
           "Bei entzündlicher oder anderweitig für Diamond ungeeigneter Haut wird die vorgesehene Behandlung entsprechend angepasst.",
       },
@@ -612,6 +640,7 @@ const STUDIO_CONTENT = {
           wert: "105,70 €",
         },
         regulaererGesamtwert: "717,70 €",
+        deposit: "55 €",
         hinweis:
           "Bei Complete kein zusätzliches kleines MED-HYAL-Kit für den enthaltenen Microneedling-Termin.",
       },
@@ -636,6 +665,7 @@ const STUDIO_CONTENT = {
           wert: "63,80 €",
         },
         regulaererGesamtwert: "509,80 €",
+        deposit: "35 €",
         hinweis: "Kein Vapozon als Bestandteil dieser Journey.",
       },
     ],

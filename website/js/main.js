@@ -246,6 +246,27 @@
     );
   }
 
+  // ---- Verbindliche Buchung & Anzahlung ----
+  const depositPolicy = c.depositPolicy;
+  const depositPolicySection = document.querySelector("[data-deposit-policy]");
+  if (
+    depositPolicySection &&
+    depositPolicy &&
+    depositPolicy.paragraphs &&
+    depositPolicy.paragraphs.length
+  ) {
+    depositPolicySection.removeAttribute("hidden");
+    document.querySelectorAll("[data-deposit-policy-heading]").forEach((el) => {
+      el.textContent = depositPolicy.heading || "";
+    });
+    document.querySelectorAll("[data-deposit-policy-text]").forEach((el) => {
+      el.innerHTML = renderParagraphs(depositPolicy.paragraphs);
+    });
+    document.querySelectorAll("[data-deposit-policy-note]").forEach((el) => {
+      el.textContent = depositPolicy.note || "";
+    });
+  }
+
   // ---- Treatment categories ----
   const wrapper = document.querySelector("[data-treatment-categories]");
   if (wrapper) {
@@ -303,8 +324,34 @@
           escapeHtml(t.suitableFor) +
           "</p>"
         : "") +
+      (t.homecareIncluded
+        ? '<p class="treatment-homecare-note">' +
+          escapeHtml(t.homecareIncluded) +
+          "</p>"
+        : "") +
+      (t.deposit ? renderDepositBlock(t.price, t.deposit) : "") +
       (hasRichDetails ? renderTreatmentDetails(t) : "") +
       "</article>"
+    );
+  }
+
+  // Gemeinsamer Baustein für "Anzahlung bei Buchung" / "Restbetrag" –
+  // wird bei Einzelbehandlungen, Kuren und Skin Journeys gleichermaßen
+  // verwendet, damit die Anzahlungsregel überall gleich aussieht.
+  function renderDepositBlock(priceStr, depositStr) {
+    const remainder = computeRemainder(priceStr, depositStr);
+    return (
+      '<div class="deposit-block">' +
+      "<span class='deposit-line'><span class='deposit-label'>Anzahlung bei Buchung</span><span class='deposit-value'>" +
+      escapeHtml(depositStr) +
+      "</span></span>" +
+      (remainder
+        ? "<span class='deposit-line'><span class='deposit-label'>Restbetrag</span><span class='deposit-value'>" +
+          escapeHtml(remainder) +
+          "</span></span>"
+        : "") +
+      "<span class='deposit-remark'>Wird vollständig auf den Gesamtpreis angerechnet.</span>" +
+      "</div>"
     );
   }
 
@@ -350,6 +397,12 @@
                   escapeHtml(savings) +
                   "</span>"
                 : "") +
+              (k.homecareIncluded
+                ? "<span class='kur-homecare'>" +
+                  escapeHtml(k.homecareIncluded) +
+                  "</span>"
+                : "") +
+              (k.deposit ? renderDepositBlock(k.price, k.deposit) : "") +
               (k.info
                 ? "<span class='kur-info'>" + escapeHtml(k.info) + "</span>"
                 : "") +
@@ -440,6 +493,7 @@
           escapeHtml(completeSavings) +
           "</span>"
         : "") +
+      (j.deposit ? renderDepositBlock(j.complete, j.deposit) : "") +
       '<span class="journey-recommended">Empfohlen für eine optimal abgestimmte Begleitung</span>' +
       "</div>" +
       '<div class="journey-price-block">' +
@@ -447,6 +501,8 @@
       '<span class="journey-price-value">' +
       escapeHtml(j.treatmentOnly) +
       "</span>" +
+      '<span class="journey-price-note">Keine enthaltene Homecare</span>' +
+      '<span class="journey-price-note">Keine produktbezogene Homecare-Anzahlung</span>' +
       (treatmentOnlySavings
         ? "<span class='journey-savings'>Du sparst " +
           escapeHtml(treatmentOnlySavings) +
@@ -532,6 +588,16 @@
     const discounted = parsePriceEUR(discountedStr);
     if (regular == null || discounted == null) return null;
     const diff = regular - discounted;
+    return diff > 0 ? formatPriceEUR(diff) : null;
+  }
+
+  // Restbetrag = Gesamtpreis – Anzahlung, ebenfalls automatisch berechnet
+  // statt von Hand gepflegt (siehe computeSavings oben).
+  function computeRemainder(priceStr, depositStr) {
+    const price = parsePriceEUR(priceStr);
+    const deposit = parsePriceEUR(depositStr);
+    if (price == null || deposit == null) return null;
+    const diff = price - deposit;
     return diff > 0 ? formatPriceEUR(diff) : null;
   }
 
