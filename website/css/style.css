@@ -634,11 +634,99 @@ section {
   color: var(--color-savings);
 }
 
+.kur-homecare {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
 .kur-hinweis {
   margin: 8px 0 0;
   font-size: 0.8rem;
   color: var(--color-text-muted);
   font-style: italic;
+}
+
+/* ---------- Verbindliche Buchung & Anzahlung ---------- */
+.deposit-policy {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 0 0 36px;
+  box-shadow: var(--shadow);
+}
+
+.deposit-policy h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+  color: var(--color-text);
+}
+
+.deposit-policy p:not(.deposit-policy-note) {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.deposit-policy p:not(.deposit-policy-note):last-child {
+  margin-bottom: 0;
+}
+
+.deposit-policy-note {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 10px 0 0;
+}
+
+/* Wiederverwendeter Baustein für "Anzahlung bei Buchung" / "Restbetrag" –
+   erscheint bei Einzelbehandlungen, Kuren und Skin Journeys gleich. */
+.deposit-block {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.deposit-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+.deposit-label {
+  color: var(--color-text-muted);
+}
+
+.deposit-value {
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.deposit-remark {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.treatment-homecare-note {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 4px 0 0;
 }
 
 /* ---------- M Ultimate Skin Journeys ---------- */
