@@ -218,6 +218,14 @@ a {
   font-size: 1.05rem;
 }
 
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--color-accent) !important;
+  font-size: 1.1rem !important;
+  margin: 0 auto 14px !important;
+}
+
 .hero-actions {
   display: flex;
   gap: 14px;
@@ -518,6 +526,353 @@ section {
   color: var(--color-text-muted);
   font-size: 0.92rem;
   text-align: center;
+}
+
+/* ---------- Treatment details (Mehr erfahren) ---------- */
+.treatment-details {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.treatment-details summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.treatment-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.treatment-details summary::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.treatment-details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.treatment-details-body {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-block strong {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.detail-block p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.detail-price p {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.kur-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kur-list li {
+  background: var(--color-accent-soft);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+}
+
+.kur-name {
+  font-weight: 600;
+  color: var(--color-text);
+  flex: 1 1 auto;
+}
+
+.kur-price {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.kur-note,
+.kur-info {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.kur-hinweis {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ---------- M Ultimate Skin Journeys ---------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 26px;
+  margin-top: 8px;
+}
+
+.journey-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.journey-card-head h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 0 0 8px;
+}
+
+.journey-hautziel {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.journey-duration-pill {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.journey-pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.journey-price-block {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.journey-price-complete {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
+.journey-price-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.journey-price-value {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.journey-price-note {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.journey-recommended {
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.journey-details {
+  border-top: 1px dashed var(--color-border);
+  padding-top: 14px;
+}
+
+.journey-details summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.journey-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.journey-details summary::after {
+  content: "+";
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.journey-details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.journey-details-body {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.journey-details-subhead {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.journey-plan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.journey-plan li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.86rem;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.journey-plan li:last-child {
+  border-bottom: none;
+}
+
+.journey-plan-week {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.journey-values {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.86rem;
+}
+
+.journey-values div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+}
+
+.journey-values-total {
+  padding-top: 6px;
+  margin-top: 4px;
+  border-top: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.journey-values-total span {
+  color: var(--color-text) !important;
+}
+
+.journey-homecare-items strong {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.journey-homecare-items ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.86rem;
+  color: var(--color-text);
+}
+
+.journey-hinweis {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.journey-final-prices {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.journey-final-prices div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.journey-final-prices span {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.journey-final-prices strong {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-accent);
+}
+
+.journeys-homecare-hinweis {
+  max-width: 640px;
+  margin: 40px auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 520px) {
+  .journey-pricing {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Contact ---------- */

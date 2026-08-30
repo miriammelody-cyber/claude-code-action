@@ -19,6 +19,17 @@ mit `// TODO` kommentiert; solange sie leer sind, blendet die Seite die
 betroffenen Buttons/Zeilen automatisch aus bzw. zeigt im Impressum/Datenschutz
 eine rot markierte "TODO"-Markierung, statt falsche Angaben zu zeigen.
 
+Die Behandlungen sind in `categories` nach Bereichen gruppiert (Basic
+Facials, Advanced Facials, Pro Facial, Seasonal & Special Facials, Nails,
+Wimpern, Augenbrauen, Hände, Waxing). Jede Behandlung kann zusätzlich zur
+kurzen Kartenbeschreibung optionale Detailfelder haben (`hautziel`,
+`whatToExpect`, `besonderheiten`, `kuren`), die dann automatisch hinter
+einem "Mehr erfahren"-Button erscheinen.
+
+Die **M Ultimate Skin Journeys** (12-Wochen-Behandlungspläne) stehen separat
+im Abschnitt `skinJourneys` – jede Journey mit Beispiel-Ablauf,
+Complete-/Treatment-Only-Preisen und enthaltener Homecare.
+
 ## Status
 
 Alle Angaben (Name, Anschrift, Telefon, E-Mail, WhatsApp, Instagram,

@@ -60,6 +60,14 @@
   document.querySelectorAll("[data-hero-text]").forEach((el) => {
     el.textContent = c.studio.heroText;
   });
+  document.querySelectorAll("[data-studio-tagline]").forEach((el) => {
+    if (c.studio.tagline) {
+      el.textContent = c.studio.tagline;
+      el.removeAttribute("hidden");
+    } else {
+      el.setAttribute("hidden", "hidden");
+    }
+  });
   document.querySelectorAll("[data-city]").forEach((el) => {
     el.textContent = c.studio.city;
   });
@@ -266,6 +274,12 @@
   }
 
   function renderTreatment(t) {
+    const hasRichDetails =
+      t.hautziel ||
+      t.whatToExpect ||
+      t.besonderheiten ||
+      (t.kuren && t.kuren.length);
+
     return (
       '<article class="treatment-card">' +
       "<h4>" +
@@ -275,9 +289,11 @@
       '<span class="pill">' +
       escapeHtml(t.price) +
       "</span>" +
-      '<span class="pill pill-duration">' +
-      escapeHtml(t.duration) +
-      "</span>" +
+      (t.duration
+        ? '<span class="pill pill-duration">' +
+          escapeHtml(t.duration) +
+          "</span>"
+        : "") +
       "</div>" +
       (t.description
         ? '<p class="treatment-desc">' + escapeHtml(t.description) + "</p>"
@@ -287,6 +303,183 @@
           escapeHtml(t.suitableFor) +
           "</p>"
         : "") +
+      (hasRichDetails ? renderTreatmentDetails(t) : "") +
+      "</article>"
+    );
+  }
+
+  function renderTreatmentDetails(t) {
+    let body = "";
+    if (t.hautziel) {
+      body +=
+        '<div class="detail-block"><strong>Für wen / Hautziel</strong><p>' +
+        escapeHtml(t.hautziel) +
+        "</p></div>";
+    }
+    if (t.whatToExpect) {
+      body +=
+        '<div class="detail-block"><strong>Was erwartet mich?</strong><p>' +
+        escapeHtml(t.whatToExpect) +
+        "</p></div>";
+    }
+    if (t.besonderheiten) {
+      body +=
+        '<div class="detail-block"><strong>Besonderheiten</strong><p>' +
+        escapeHtml(t.besonderheiten) +
+        "</p></div>";
+    }
+    if (t.kuren && t.kuren.length) {
+      body +=
+        '<div class="detail-block"><strong>Kurmöglichkeiten</strong><ul class="kur-list">' +
+        t.kuren
+          .map(
+            (k) =>
+              "<li><span class='kur-name'>" +
+              escapeHtml(k.name) +
+              "</span><span class='kur-price'>" +
+              escapeHtml(k.price) +
+              "</span>" +
+              (k.note
+                ? "<span class='kur-note'>" + escapeHtml(k.note) + "</span>"
+                : "") +
+              (k.info
+                ? "<span class='kur-info'>" + escapeHtml(k.info) + "</span>"
+                : "") +
+              "</li>",
+          )
+          .join("") +
+        "</ul>" +
+        (t.kurenHinweis
+          ? '<p class="kur-hinweis">' + escapeHtml(t.kurenHinweis) + "</p>"
+          : "") +
+        "</div>";
+    }
+    body +=
+      '<div class="detail-block detail-price"><strong>Preis</strong><p>' +
+      escapeHtml(t.price) +
+      (t.duration ? " · " + escapeHtml(t.duration) : "") +
+      "</p></div>";
+
+    return (
+      '<details class="treatment-details">' +
+      "<summary>Mehr erfahren</summary>" +
+      '<div class="treatment-details-body">' +
+      body +
+      "</div></details>"
+    );
+  }
+
+  // ---- M Ultimate Skin Journeys ----
+  const journeysSection = document.querySelector("[data-journeys-section]");
+  const journeysGrid = document.querySelector("[data-journeys-grid]");
+  const journeysNavItem = document.querySelector("[data-journeys-nav-item]");
+  const skinJourneys = c.skinJourneys;
+  if (
+    journeysSection &&
+    journeysGrid &&
+    skinJourneys &&
+    skinJourneys.journeys &&
+    skinJourneys.journeys.length > 0
+  ) {
+    journeysSection.removeAttribute("hidden");
+    if (journeysNavItem) journeysNavItem.removeAttribute("hidden");
+
+    document.querySelectorAll("[data-journeys-heading]").forEach((el) => {
+      el.textContent = skinJourneys.heading || "";
+    });
+    document.querySelectorAll("[data-journeys-subheading]").forEach((el) => {
+      el.textContent = skinJourneys.subheading || "";
+    });
+    document.querySelectorAll("[data-journeys-intro]").forEach((el) => {
+      el.textContent = skinJourneys.intro || "";
+    });
+    document
+      .querySelectorAll("[data-journeys-homecare-hinweis]")
+      .forEach((el) => {
+        el.textContent = skinJourneys.homecareHinweis || "";
+      });
+
+    journeysGrid.innerHTML = skinJourneys.journeys.map(renderJourney).join("");
+  }
+
+  function renderJourney(j) {
+    return (
+      '<article class="journey-card" data-reveal>' +
+      '<div class="journey-card-head">' +
+      "<h3>" +
+      escapeHtml(j.name) +
+      "</h3>" +
+      '<p class="journey-hautziel">' +
+      escapeHtml(j.hautziel) +
+      "</p>" +
+      '<span class="pill journey-duration-pill">12 Wochen · 6 Termine</span>' +
+      "</div>" +
+      '<div class="journey-pricing">' +
+      '<div class="journey-price-block journey-price-complete">' +
+      '<span class="journey-price-label">Complete</span>' +
+      '<span class="journey-price-value">' +
+      escapeHtml(j.complete) +
+      "</span>" +
+      '<span class="journey-price-note">inkl. Fullsize-Homecare</span>' +
+      '<span class="journey-recommended">Empfohlen für eine optimal abgestimmte Begleitung</span>' +
+      "</div>" +
+      '<div class="journey-price-block">' +
+      '<span class="journey-price-label">Treatment Only</span>' +
+      '<span class="journey-price-value">' +
+      escapeHtml(j.treatmentOnly) +
+      "</span>" +
+      "</div>" +
+      "</div>" +
+      '<details class="journey-details">' +
+      "<summary>Journey ansehen</summary>" +
+      '<div class="journey-details-body">' +
+      '<h4 class="journey-details-subhead">Beispielhafter 12-Wochen-Plan</h4>' +
+      '<ul class="journey-plan">' +
+      j.plan
+        .map(
+          (p) =>
+            "<li><span class='journey-plan-week'>Woche " +
+            escapeHtml(p.week) +
+            "</span><span>" +
+            escapeHtml(p.treatment) +
+            "</span></li>",
+        )
+        .join("") +
+      "</ul>" +
+      '<div class="journey-values">' +
+      "<div><span>Regulärer Behandlungswert</span><span>" +
+      escapeHtml(j.regulaererBehandlungswert) +
+      "</span></div>" +
+      "<div><span>Homecare-Wert" +
+      (j.homecare && j.homecare.setName
+        ? " (" + escapeHtml(j.homecare.setName) + ")"
+        : "") +
+      "</span><span>" +
+      escapeHtml(j.homecare ? j.homecare.wert : "") +
+      "</span></div>" +
+      '<div class="journey-values-total"><span>Regulärer Gesamtwert</span><span>' +
+      escapeHtml(j.regulaererGesamtwert) +
+      "</span></div>" +
+      "</div>" +
+      (j.homecare && j.homecare.items && j.homecare.items.length
+        ? '<div class="journey-homecare-items"><strong>Enthaltene Fullsize-Homecare (Complete)</strong><ul>' +
+          j.homecare.items
+            .map((i) => "<li>" + escapeHtml(i) + "</li>")
+            .join("") +
+          "</ul></div>"
+        : "") +
+      (j.hinweis
+        ? '<p class="journey-hinweis">' + escapeHtml(j.hinweis) + "</p>"
+        : "") +
+      '<div class="journey-final-prices">' +
+      "<div><span>Treatment Only</span><strong>" +
+      escapeHtml(j.treatmentOnly) +
+      "</strong></div>" +
+      "<div><span>Complete</span><strong>" +
+      escapeHtml(j.complete) +
+      "</strong></div>" +
+      "</div>" +
+      "</div></details>" +
       "</article>"
     );
   }

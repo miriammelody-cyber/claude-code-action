@@ -24,7 +24,7 @@ const STUDIO_CONTENT = {
   meta: {
     title: "M Beauty – Beauty Studio in Krefeld",
     description:
-      "M Beauty Studio in Krefeld: Gesichtsbehandlungen, Microneedling, Diamond Glow und mehr. Informiere dich über unsere Behandlungen und Preise – Kontakt gerne per WhatsApp oder Instagram.",
+      "M Beauty Studio in Krefeld: Facials, Microneedling, Diamond Glow und individuelle Skin Journeys. Informiere dich über unsere Behandlungen und Preise – Kontakt gerne per WhatsApp oder Instagram.",
   },
 
   // -------------------------------------------------------------
@@ -33,6 +33,7 @@ const STUDIO_CONTENT = {
   studio: {
     name: "M Beauty",
     slogan: "Beauty Studio",
+    tagline: "Your Moment. Your Glow.",
     city: "Krefeld",
     region: "Nordrhein-Westfalen",
 
@@ -180,58 +181,153 @@ const STUDIO_CONTENT = {
   // -------------------------------------------------------------
   categories: [
     {
-      id: "gesichtsbehandlungen",
-      name: "Gesichtsbehandlungen",
+      id: "basic-facials",
+      name: "Basic Facials",
       treatments: [
         {
           name: "M Essential Facial",
-          price: "75 €",
+          price: "69 €",
           duration: "ca. 60 Minuten",
-          // Kurzbeschreibung (Entwurf – bitte von dir prüfen/anpassen,
-          // im Ausgangsmaterial war kein Beschreibungstext vorhanden)
           description:
-            "Klassische Gesichtsbehandlung zur gründlichen Reinigung und Pflege deiner Haut – ideal als Einstieg oder regelmäßige Pflegeroutine.",
-          suitableFor: "Alle Hauttypen",
+            "Individuelle klassische Gesichtsbehandlung für Pflege, Feuchtigkeit und ein gepflegtes Hautgefühl.",
+          whatToExpect:
+            "Die Behandlung wird an den aktuellen Hautzustand angepasst und kann unter anderem Reinigung, geeignetes Peeling, Wirkstoffpflege, Massage, Maske und Abschlusspflege enthalten. Bei Bedarf kann eine leichte Ausreinigung integriert werden.",
+          besonderheiten:
+            "Für eine intensivere Ausreinigung empfehlen wir M Deep Clean.",
         },
         {
           name: "M Deep Clean",
           price: "85 €",
-          duration: "ca. 70–75 Minuten",
+          duration: "ca. 75 Minuten",
           description:
-            "Intensive Tiefenreinigung zur Entfernung von Unreinheiten und zur Verfeinerung des Hautbilds.",
-          suitableFor: "Unreine oder verstopfte Haut",
+            "Intensive Gesichtsreinigung für Haut mit verstopften Poren, Komedonen oder stärkerem Ausreinigungsbedarf.",
+          hautziel:
+            "Haut mit verstopften Poren, Komedonen oder stärkerem Ausreinigungsbedarf.",
+          whatToExpect:
+            "Im Mittelpunkt stehen die Vorbereitung der Haut und die sorgfältige manuelle Ausreinigung. Die Behandlung wird anschließend mit hautzustandsgerechter Wirkstoffpflege und Maske abgeschlossen.",
+          besonderheiten:
+            "Vapozon wird nur eingesetzt, wenn der Hautzustand dafür geeignet ist.",
         },
+      ],
+    },
+    {
+      id: "advanced-facials",
+      name: "Advanced Facials",
+      treatments: [
         {
           name: "M Ultrasound Glow",
-          price: "89 €",
+          price: "85 €",
           duration: "ca. 60 Minuten",
           description:
-            "Gesichtsbehandlung mit Ultraschalltechnologie zur sanften Reinigung und für einen frischen, strahlenden Teint.",
-          suitableFor: "Alle Hauttypen",
+            "Apparative Wirkstoffbehandlung mit professionellem Ultraschall und integrierter LED.",
+          hautziel:
+            "Geeignet beispielsweise bei Feuchtigkeitsmangel, fahlem Hautbild, regenerationsbedürftiger Haut oder – entsprechend angepasst – unreiner Haut.",
+          whatToExpect:
+            "Wirkstoffe, Ultraschallparameter und LED werden entsprechend dem Hautzustand ausgewählt.",
+          kuren: [
+            {
+              name: "6er Ultrasound Intensivkur",
+              price: "479 €",
+              note: "Regulärer Einzelwert: 6 × 85 € = 510 € · Kundenvorteil: 31 €",
+              info: "Die Behandlungstermine werden entsprechend dem individuellen Hautziel geplant und der Hautverlauf regelmäßig beurteilt.",
+            },
+          ],
         },
         {
           name: "M Diamond Glow",
           price: "89 €",
           duration: "ca. 60 Minuten",
           description:
-            "Mechanisches Diamant-Peeling zur Hautverfeinerung, das abgestorbene Hautschüppchen entfernt und die Haut geschmeidiger macht.",
-          suitableFor: "Alle Hauttypen",
+            "Professionelle Diamond Microdermabrasion zur kontrollierten Abtragung oberflächlicher Verhornungen.",
+          hautziel:
+            "Für ein glatteres, verfeinertes und frischer wirkendes Hautbild.",
+          whatToExpect:
+            "Die Behandlung wird mit individuell ausgewählten Wirkstoffen, Maske und Abschlusspflege kombiniert.",
+          kuren: [
+            {
+              name: "6er Diamond Intensivkur",
+              price: "499 €",
+              note: "Regulärer Einzelwert: 6 × 89 € = 534 € · Kundenvorteil: 35 €",
+              info: "Bei einer problemorientierten Intensivkur können die Behandlungen – sofern der Hautzustand dies zulässt – im Abstand von etwa 7–10 Tagen durchgeführt werden. Nach sechs Sitzungen erfolgt eine erneute Beurteilung des Hautzustands.",
+            },
+          ],
         },
         {
           name: "M Diamond Ultrasound",
           price: "109 €",
           duration: "ca. 75 Minuten",
           description:
-            "Kombinationsbehandlung aus Diamant-Peeling und Ultraschall für ein besonders intensives Pflegeergebnis.",
-          suitableFor: "Alle Hauttypen",
+            "Premium-Kombination aus Diamond Microdermabrasion und professionellem Ultraschall mit integrierter LED.",
+          hautziel:
+            "Ideal für Kundinnen, die Hautbildverfeinerung, Glow und intensive Wirkstoffpflege in einer Behandlung kombinieren möchten.",
+          whatToExpect:
+            "Die Diamond Microdermabrasion verfeinert zunächst die Hautoberfläche. Anschließend erfolgt eine individuell abgestimmte Ultraschall-Wirkstoffbehandlung.",
+          besonderheiten:
+            "Für diese Behandlung gibt es bewusst keine eigene starre Kur.",
         },
+      ],
+    },
+    {
+      id: "pro-facial",
+      name: "Pro Facial",
+      treatments: [
         {
           name: "M Microneedling PRO",
-          price: "139 €",
-          duration: "ca. 60–75 Minuten",
+          price: "159 €",
+          duration: "",
           description:
-            "Professionelles Microneedling zur Anregung der Hauterneuerung – für ein feineres Hautbild.",
-          suitableFor: "Nach individueller Beratung",
+            "Professionelles kosmetisches Microneedling für intensive Hautregeneration und Hautbildoptimierung.",
+          hautziel: "Intensive Hautregeneration und Hautbildoptimierung.",
+          whatToExpect:
+            "Die Behandlung wird individuell an Hautzustand und Behandlungsziel angepasst.",
+          besonderheiten:
+            "Bei einer normalen Einzelbuchung ist ein kleines CNC MED HYAL Nachsorge-Kit für zuhause inklusive.",
+          kuren: [
+            { name: "Microneedling 3er-Kur", price: "449 €" },
+            { name: "Microneedling 6er-Kur", price: "849 €" },
+          ],
+          kurenHinweis:
+            "Für intensive Behandlungskonzepte können mehrere Microneedling-Sitzungen sinnvoll sein. Anzahl und Abstände werden individuell anhand des Hautzustands und Behandlungsziels geplant.",
+        },
+      ],
+    },
+    {
+      id: "seasonal-facials",
+      name: "Seasonal & Special Facials",
+      treatments: [
+        {
+          name: "M Summer Glow",
+          price: "79 €",
+          duration: "ca. 60 Minuten",
+          description:
+            "Saisonale Feuchtigkeits- und Glow-Behandlung für die Sommermonate.",
+          hautziel: "Feuchtigkeit, Beruhigung und frischer Glow.",
+          whatToExpect:
+            "Mit Aloe-Vera- und Hyaluron-Komponenten sowie intensiver Feuchtigkeitsmaske.",
+          besonderheiten: "Kein Vapozon als Standardbestandteil.",
+        },
+        {
+          name: "M Autumn & Winter Glow",
+          price: "89 €",
+          duration: "ca. 70 Minuten",
+          description:
+            "Regenerierendes saisonales Spa-Ritual für die kühlere Jahreszeit.",
+          hautziel:
+            "Feuchtigkeit, Pflege, Entspannung, Regeneration und Hautkomfort.",
+          whatToExpect: "Mit Wirkstoffpflege, Massage und intensiver Maske.",
+          besonderheiten:
+            "Wärme bzw. Vapozon wird nur bei geeignetem Hautzustand eingesetzt.",
+        },
+        {
+          name: "M Pearls Ritual",
+          price: "99 €",
+          duration: "ca. 70 Minuten",
+          description:
+            "Luxuriöses Wellness- und Regenerationsritual mit der CNC Moments of Pearls Pflegelinie.",
+          hautziel:
+            "Pflege, Regeneration, Entspannung und ein besonders gepflegtes, strahlendes Hautgefühl.",
+          whatToExpect:
+            "Ein Premium-Ritual für Wohlbefinden und Ausstrahlung – bewusst als Wellness-Erlebnis und nicht als apparative Problemlösung gedacht.",
         },
       ],
     },
@@ -356,6 +452,182 @@ const STUDIO_CONTENT = {
       ],
     },
   ],
+
+  // -------------------------------------------------------------
+  // M Ultimate Skin Journeys
+  // -------------------------------------------------------------
+  // Jede Journey läuft über ca. 12 Wochen mit 6 individuell geplanten
+  // Terminen. "complete" enthält passende Fullsize-Homecare, "treatmentOnly"
+  // nur die Behandlungen. Der Beispiel-Ablauf ("plan") ist nur zur
+  // Orientierung – die tatsächlichen Termine werden individuell geplant.
+  skinJourneys: {
+    heading: "M Ultimate Skin Journey",
+    subheading:
+      "12 Wochen. 6 individuelle Behandlungstermine. Ein gemeinsames Hautziel.",
+    intro:
+      "Die M Ultimate Skin Journey ist kein starres Behandlungspaket. Über etwa zwölf Wochen wird ein individueller Hautplan erstellt. Der Hautzustand wird zu Beginn analysiert und während der Journey regelmäßig neu beurteilt. Die vorgesehenen Behandlungen können entsprechend der Hautentwicklung angepasst oder durch eine geeignetere Behandlung ersetzt werden. Startanalyse, Verlaufskontrollen und Abschlussanalyse gehören zum Konzept.",
+    homecareHinweis:
+      "Für bestmögliche Behandlungsergebnisse empfehlen wir die auf die Skin Journey abgestimmte Homecare. Professionelle Studiobehandlungen und die tägliche Pflege zuhause ergänzen sich. Die Journey kann auf Wunsch auch ohne das empfohlene Homecare-Paket gebucht werden. In diesem Fall können Verlauf und Ergebnis von der ursprünglichen Behandlungsplanung abweichen, insbesondere wenn die vorhandene Heimpflege nicht optimal zum Hautziel passt. Bei Treatment Only wird deshalb die bereits vorhandene Pflegeroutine gemeinsam geprüft. Ist diese bereits geeignet, muss sie selbstverständlich nicht ersetzt werden.",
+    journeys: [
+      {
+        id: "hydration",
+        name: "Hydration",
+        hautziel:
+          "Feuchtigkeitsarme, fahle oder spannende Haut ohne ausgeprägte entzündliche Problematik.",
+        fokus: "Hydration + Glow + apparative Wirkstoffversorgung",
+        plan: [
+          { week: "0", treatment: "M Essential Facial" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Diamond Glow" },
+          { week: "6", treatment: "M Ultrasound Glow" },
+          { week: "9", treatment: "M Diamond Ultrasound" },
+          { week: "12", treatment: "M Essential Facial" },
+        ],
+        regulaererBehandlungswert: "506 €",
+        treatmentOnly: "459 €",
+        complete: "569 €",
+        homecare: {
+          items: ["MED HYAL serum 30 ml", "MED HYAL cream 50 ml"],
+          setName: "CNC MED HYAL Set groß",
+          wert: "110 €",
+        },
+        regulaererGesamtwert: "616 €",
+      },
+      {
+        id: "comfort",
+        name: "Comfort",
+        hautziel:
+          "Trockene, lipidarme bzw. pflegebedürftige Haut mit Spannungsgefühl und reduziertem Hautkomfort.",
+        fokus: "Feuchtigkeit + Lipide + Barriere + Regeneration",
+        plan: [
+          { week: "0", treatment: "M Essential Facial" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Essential Facial" },
+          { week: "6", treatment: "M Ultrasound Glow" },
+          { week: "9", treatment: "regenerative saisonal passende Behandlung" },
+          { week: "12", treatment: "M Essential Facial" },
+        ],
+        regulaererBehandlungswert: "466 €",
+        treatmentOnly: "425 €",
+        complete: "509 €",
+        homecare: {
+          items: ["MED HYAL serum 30 ml", "DiHyal Soft Creme 50 ml"],
+          wert: "88,80 €",
+        },
+        regulaererGesamtwert: "554,80 €",
+      },
+      {
+        id: "age-firm-pro",
+        name: "Age & Firm PRO",
+        hautziel:
+          "Reife bzw. regenerationsbedürftige Haut mit Linien sowie Elastizitäts- und Festigkeitsverlust.",
+        fokus: "Regeneration + Anti-Aging + Wirkstoffversorgung",
+        plan: [
+          { week: "0", treatment: "M Essential Facial" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Microneedling PRO" },
+          { week: "6", treatment: "M Essential Facial" },
+          { week: "8", treatment: "M Ultrasound Glow" },
+          { week: "12", treatment: "M Microneedling PRO" },
+        ],
+        regulaererBehandlungswert: "626 €",
+        treatmentOnly: "569 €",
+        complete: "749 €",
+        homecare: {
+          items: [
+            "MED HYAL serum 30 ml",
+            "MED HYAL cream 50 ml",
+            "MED HYAL collagen manager 30 ml",
+          ],
+          wert: "181,90 €",
+        },
+        regulaererGesamtwert: "807,90 €",
+        hinweis:
+          "Innerhalb der Complete Journey wird bei den enthaltenen Microneedling-Terminen nicht zusätzlich pro Termin das kleine MED-HYAL-Kit ausgegeben, da bereits die Fullsize-Homecare enthalten ist.",
+      },
+      {
+        id: "clear-skin",
+        name: "Clear Skin",
+        hautziel:
+          "Unreine/ölige Haut, Komedonen, verstopfte Poren, stärkere Verhornung oder ungleichmäßiges Hautbild.",
+        fokus: "Ausreinigung + Regulation + Hautbildverfeinerung",
+        plan: [
+          { week: "0", treatment: "M Deep Clean" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Diamond Glow" },
+          { week: "6", treatment: "M Deep Clean" },
+          { week: "9", treatment: "M Ultrasound Glow" },
+          { week: "12", treatment: "M Diamond Ultrasound" },
+        ],
+        regulaererBehandlungswert: "538 €",
+        treatmentOnly: "489 €",
+        complete: "599 €",
+        homecare: {
+          items: [
+            "MicroSilver BG Face Wash 100 ml",
+            "MED HYAL clear & refine 30 ml",
+            "MicroSilver BG Face Cream Soft 50 ml",
+          ],
+          wert: "115,70 €",
+        },
+        regulaererGesamtwert: "653,70 €",
+        hinweis:
+          "Bei entzündlicher oder anderweitig für Diamond ungeeigneter Haut wird die vorgesehene Behandlung entsprechend angepasst.",
+      },
+      {
+        id: "clear-age-pro",
+        name: "Clear & Age PRO",
+        hautziel:
+          "Reifere Haut mit gleichzeitiger Neigung zu Unreinheiten, Komedonen oder vergrößerten Poren.",
+        fokus: "Regulation + Hautbild + Anti-Aging",
+        plan: [
+          { week: "0", treatment: "M Deep Clean" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Diamond Glow" },
+          { week: "6", treatment: "M Microneedling PRO" },
+          { week: "9", treatment: "M Ultrasound Glow" },
+          { week: "12", treatment: "M Diamond Ultrasound" },
+        ],
+        regulaererBehandlungswert: "612 €",
+        treatmentOnly: "559 €",
+        complete: "659 €",
+        homecare: {
+          items: [
+            "MicroSilver BG Face Wash 100 ml",
+            "DiHyal Effect Gel 30 ml",
+            "MicroSilver BG Face Cream Soft 50 ml",
+          ],
+          wert: "105,70 €",
+        },
+        regulaererGesamtwert: "717,70 €",
+        hinweis:
+          "Bei Complete kein zusätzliches kleines MED-HYAL-Kit für den enthaltenen Microneedling-Termin.",
+      },
+      {
+        id: "calm-balance",
+        name: "Calm & Balance",
+        hautziel: "Sensible, gestresste, reaktive bzw. gefäßlabile Haut.",
+        fokus: "Beruhigung + Feuchtigkeit + Barrierestabilisierung",
+        plan: [
+          { week: "0", treatment: "M Essential Facial" },
+          { week: "2", treatment: "M Ultrasound Glow" },
+          { week: "4", treatment: "M Essential Facial" },
+          { week: "6", treatment: "M Ultrasound Glow" },
+          { week: "9", treatment: "M Essential Facial" },
+          { week: "12", treatment: "M Essential Facial" },
+        ],
+        regulaererBehandlungswert: "446 €",
+        treatmentOnly: "409 €",
+        complete: "469 €",
+        homecare: {
+          items: ["Aloe Vera Gel 50 ml", "DiHyal Sensitive Fluid 30 ml"],
+          wert: "63,80 €",
+        },
+        regulaererGesamtwert: "509,80 €",
+        hinweis: "Kein Vapozon als Bestandteil dieser Journey.",
+      },
+    ],
+  },
 
   // -------------------------------------------------------------
   // Rechtliche Angaben (Impressum & Datenschutz)
