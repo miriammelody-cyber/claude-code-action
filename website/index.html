@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FAF6F0'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23B98D4F'%3EM%3C/text%3E%3C/svg%3E"
+    />
+    <title>M Beauty – Beauty Studio in Krefeld</title>
+    <meta
+      name="description"
+      content="Informationsseite von M Beauty in Krefeld: Behandlungen, Preise und Kontakt per WhatsApp oder Instagram."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#top" class="brand">
+          <span data-studio-name>M Beauty</span>
+          <span class="brand-slogan" data-studio-slogan>Beauty Studio</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links" data-nav-links>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li data-gallery-nav-item hidden><a href="#galerie">Galerie</a></li>
+            <li><a href="#behandlungen">Behandlungen</a></li>
+            <li data-journeys-nav-item hidden>
+              <a href="#journeys">Journeys</a>
+            </li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+          </ul>
+          <div class="nav-controls">
+            <button
+              class="music-toggle"
+              data-music-toggle
+              hidden
+              aria-pressed="false"
+              aria-label="Musik abspielen"
+            >
+              <span class="music-icon" aria-hidden="true">♪</span>
+            </button>
+            <button
+              class="nav-toggle"
+              data-nav-toggle
+              aria-label="Menü öffnen"
+              aria-expanded="false"
+            >
+              ☰
+            </button>
+          </div>
+        </div>
+      </nav>
+      <audio data-music-player loop preload="none"></audio>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero container">
+        <div class="hero-eyebrow">Willkommen im Studio</div>
+        <h1>
+          <span data-studio-name>M Beauty</span> – Beauty Studio in
+          <span data-city>Krefeld</span>
+        </h1>
+        <p class="hero-tagline" data-studio-tagline hidden></p>
+        <p data-hero-text>Herzlich willkommen bei M Beauty in Krefeld.</p>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" data-whatsapp-link href="#" hidden
+            >💬 Per WhatsApp anfragen</a
+          >
+          <a
+            class="btn btn-instagram"
+            data-instagram-link
+            href="#"
+            target="_blank"
+            rel="noopener"
+            hidden
+            >📷 Über Instagram schreiben</a
+          >
+          <a class="btn btn-outline" href="#behandlungen"
+            >Behandlungen ansehen</a
+          >
+        </div>
+      </section>
+
+      <!-- Logo-Band -->
+      <div class="logo-band">
+        <img
+          class="logo-band-img"
+          src="assets/logo-mbeauty.jpg"
+          alt="M Beauty Logo"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Über mich -->
+      <section id="ueber-uns" class="section-alt">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-block about-block-intro" data-reveal>
+              <div class="about-role">Persönliche Vorstellung</div>
+              <h2 data-about-intro-heading>Hallo, ich bin Miri</h2>
+              <div data-about-intro-paragraphs></div>
+              <p class="about-signature">
+                <span data-about-signature>Deine Miri</span>
+                <em data-about-tagline></em>
+              </p>
+            </div>
+
+            <div class="about-block" data-reveal>
+              <h3 data-about-werdegang-heading>Mein Werdegang</h3>
+              <div data-about-werdegang-paragraphs></div>
+            </div>
+
+            <div class="about-block" data-reveal>
+              <h3 data-about-qualifications-heading>Qualifikationen</h3>
+              <ul class="qualifications-list" data-about-qualifications></ul>
+            </div>
+
+            <div class="about-block" data-reveal>
+              <h3 data-about-philosophy-heading>Meine Philosophie</h3>
+              <div data-about-philosophy-paragraphs></div>
+              <p
+                class="about-tagline-closing"
+                data-about-philosophy-tagline
+              ></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie -->
+      <section id="galerie" data-gallery-section hidden>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Eindrücke</div>
+            <h2>Aus dem Studio</h2>
+          </div>
+          <div class="gallery-grid" data-gallery-grid></div>
+        </div>
+      </section>
+
+      <!-- Behandlungen -->
+      <section id="behandlungen">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Leistungen &amp; Preise</div>
+            <h2>Unsere Behandlungen</h2>
+            <p>
+              Ein Überblick über unsere aktuellen Behandlungen inklusive Preis
+              und Dauer.
+            </p>
+          </div>
+          <div data-treatment-categories></div>
+        </div>
+      </section>
+
+      <!-- M Ultimate Skin Journeys -->
+      <section id="journeys" class="section-alt" data-journeys-section hidden>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow" data-journeys-subheading></div>
+            <h2 data-journeys-heading>M Ultimate Skin Journey</h2>
+            <p data-journeys-intro></p>
+          </div>
+          <div class="journey-grid" data-journeys-grid></div>
+          <p
+            class="journeys-homecare-hinweis"
+            data-journeys-homecare-hinweis
+          ></p>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section id="kontakt" class="section-alt">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Kontakt</div>
+            <h2>Interesse an einer Behandlung?</h2>
+            <p>
+              Wir arbeiten ohne öffentliche Online-Terminbuchung. Schreib uns
+              einfach kurz per WhatsApp oder Instagram – wir melden uns
+              persönlich bei dir zurück.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <p>
+                Du möchtest eine Behandlung anfragen oder hast noch Fragen?
+                Schreib mir gerne per WhatsApp oder Instagram. Ich melde mich
+                persönlich bei dir zurück.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-whatsapp" data-whatsapp-link href="#" hidden
+                  >💬 Per WhatsApp anfragen</a
+                >
+                <a
+                  class="btn btn-instagram"
+                  data-instagram-link
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  hidden
+                  >📷 Über Instagram schreiben</a
+                >
+              </div>
+              <p
+                data-contact-fallback
+                hidden
+                style="margin-top: 16px; font-size: 0.85rem"
+              >
+                Kontaktmöglichkeiten werden in Kürze ergänzt.
+              </p>
+
+              <ul class="opening-hours" data-opening-hours hidden></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <p>
+          &copy; <span data-year>2026</span>
+          <span data-studio-name>M Beauty</span> ·
+          <span data-city>Krefeld</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Sticky mobile contact bar -->
+    <div class="sticky-contact" data-sticky-contact hidden>
+      <a class="btn btn-whatsapp" data-whatsapp-link href="#" hidden
+        >💬 WhatsApp</a
+      >
+      <a
+        class="btn btn-instagram"
+        data-instagram-link
+        href="#"
+        target="_blank"
+        rel="noopener"
+        hidden
+        >📷 Instagram</a
+      >
+    </div>
+
+    <script src="content/studio-content.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
