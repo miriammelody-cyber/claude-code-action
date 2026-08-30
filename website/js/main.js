@@ -332,21 +332,30 @@
       body +=
         '<div class="detail-block"><strong>Kurmöglichkeiten</strong><ul class="kur-list">' +
         t.kuren
-          .map(
-            (k) =>
+          .map((k) => {
+            const savings = computeSavings(k.regularValue, k.price);
+            return (
               "<li><span class='kur-name'>" +
               escapeHtml(k.name) +
               "</span><span class='kur-price'>" +
               escapeHtml(k.price) +
               "</span>" +
-              (k.note
-                ? "<span class='kur-note'>" + escapeHtml(k.note) + "</span>"
+              (k.regularValueNote
+                ? "<span class='kur-note'>" +
+                  escapeHtml(k.regularValueNote) +
+                  "</span>"
+                : "") +
+              (savings
+                ? "<span class='kur-savings'>Du sparst " +
+                  escapeHtml(savings) +
+                  "</span>"
                 : "") +
               (k.info
                 ? "<span class='kur-info'>" + escapeHtml(k.info) + "</span>"
                 : "") +
-              "</li>",
-          )
+              "</li>"
+            );
+          })
           .join("") +
         "</ul>" +
         (t.kurenHinweis
@@ -403,6 +412,11 @@
   }
 
   function renderJourney(j) {
+    const completeSavings = computeSavings(j.regulaererGesamtwert, j.complete);
+    const treatmentOnlySavings = computeSavings(
+      j.regulaererBehandlungswert,
+      j.treatmentOnly,
+    );
     return (
       '<article class="journey-card" data-reveal>' +
       '<div class="journey-card-head">' +
@@ -421,6 +435,11 @@
       escapeHtml(j.complete) +
       "</span>" +
       '<span class="journey-price-note">inkl. Fullsize-Homecare</span>' +
+      (completeSavings
+        ? "<span class='journey-savings'>Du sparst " +
+          escapeHtml(completeSavings) +
+          "</span>"
+        : "") +
       '<span class="journey-recommended">Empfohlen für eine optimal abgestimmte Begleitung</span>' +
       "</div>" +
       '<div class="journey-price-block">' +
@@ -428,6 +447,11 @@
       '<span class="journey-price-value">' +
       escapeHtml(j.treatmentOnly) +
       "</span>" +
+      (treatmentOnlySavings
+        ? "<span class='journey-savings'>Du sparst " +
+          escapeHtml(treatmentOnlySavings) +
+          "</span>"
+        : "") +
       "</div>" +
       "</div>" +
       '<details class="journey-details">' +
@@ -482,6 +506,33 @@
       "</div></details>" +
       "</article>"
     );
+  }
+
+  // Preis-Strings wie "479 €" oder "554,80 €" in Zahlen umwandeln und
+  // wieder zurück, um Ersparnisse automatisch zu berechnen – so muss
+  // niemand Ersparnisbeträge von Hand nachrechnen und pflegen.
+  function parsePriceEUR(str) {
+    if (!str) return null;
+    const cleaned = String(str).replace(/[€\s]/g, "").replace(",", ".");
+    const n = parseFloat(cleaned);
+    return isNaN(n) ? null : n;
+  }
+
+  function formatPriceEUR(n) {
+    const rounded = Math.round(n * 100) / 100;
+    const hasCents = Math.abs(rounded % 1) > 0.001;
+    const str = hasCents
+      ? rounded.toFixed(2).replace(".", ",")
+      : String(Math.round(rounded));
+    return str + " €";
+  }
+
+  function computeSavings(regularStr, discountedStr) {
+    const regular = parsePriceEUR(regularStr);
+    const discounted = parsePriceEUR(discountedStr);
+    if (regular == null || discounted == null) return null;
+    const diff = regular - discounted;
+    return diff > 0 ? formatPriceEUR(diff) : null;
   }
 
   function escapeHtml(str) {

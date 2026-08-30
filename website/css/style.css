@@ -20,6 +20,7 @@
   --color-rose: #c9a3a0; /* dezentes Roségold / Dusty Rose */
   --color-seablue: #4f9b96; /* dezenter Akzent (z. B. Musik-Button aktiv) */
   --color-whatsapp: #3fa16d;
+  --color-savings: #256644; /* Ersparnis-Hinweis, WCAG-geprüft auf allen Kartenhintergründen */
   --font-heading:
     Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
   --font-body:
@@ -626,6 +627,13 @@ section {
   color: var(--color-text-muted);
 }
 
+.kur-savings {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-savings);
+}
+
 .kur-hinweis {
   margin: 8px 0 0;
   font-size: 0.8rem;
@@ -708,6 +716,12 @@ section {
 .journey-price-note {
   font-size: 0.76rem;
   color: var(--color-text-muted);
+}
+
+.journey-savings {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-savings);
 }
 
 .journey-recommended {
@@ -1138,6 +1152,7 @@ section {
     --color-border: #3c3025;
     --color-accent: #d8b077;
     --color-accent-soft: #4a3a26;
+    --color-savings: #6fcf9a;
   }
 
   .site-header {

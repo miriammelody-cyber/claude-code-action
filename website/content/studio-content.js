@@ -228,7 +228,8 @@ const STUDIO_CONTENT = {
             {
               name: "6er Ultrasound Intensivkur",
               price: "479 €",
-              note: "Regulärer Einzelwert: 6 × 85 € = 510 € · Kundenvorteil: 31 €",
+              regularValue: "510 €",
+              regularValueNote: "Regulärer Einzelwert: 6 × 85 €",
               info: "Die Behandlungstermine werden entsprechend dem individuellen Hautziel geplant und der Hautverlauf regelmäßig beurteilt.",
             },
           ],
@@ -247,7 +248,8 @@ const STUDIO_CONTENT = {
             {
               name: "6er Diamond Intensivkur",
               price: "499 €",
-              note: "Regulärer Einzelwert: 6 × 89 € = 534 € · Kundenvorteil: 35 €",
+              regularValue: "534 €",
+              regularValueNote: "Regulärer Einzelwert: 6 × 89 €",
               info: "Bei einer problemorientierten Intensivkur können die Behandlungen – sofern der Hautzustand dies zulässt – im Abstand von etwa 7–10 Tagen durchgeführt werden. Nach sechs Sitzungen erfolgt eine erneute Beurteilung des Hautzustands.",
             },
           ],
@@ -283,8 +285,18 @@ const STUDIO_CONTENT = {
           besonderheiten:
             "Bei einer normalen Einzelbuchung ist ein kleines CNC MED HYAL Nachsorge-Kit für zuhause inklusive.",
           kuren: [
-            { name: "Microneedling 3er-Kur", price: "449 €" },
-            { name: "Microneedling 6er-Kur", price: "849 €" },
+            {
+              name: "Microneedling 3er-Kur",
+              price: "449 €",
+              regularValue: "477 €",
+              regularValueNote: "Regulärer Einzelwert: 3 × 159 €",
+            },
+            {
+              name: "Microneedling 6er-Kur",
+              price: "849 €",
+              regularValue: "954 €",
+              regularValueNote: "Regulärer Einzelwert: 6 × 159 €",
+            },
           ],
           kurenHinweis:
             "Für intensive Behandlungskonzepte können mehrere Microneedling-Sitzungen sinnvoll sein. Anzahl und Abstände werden individuell anhand des Hautzustands und Behandlungsziels geplant.",
