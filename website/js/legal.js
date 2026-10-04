@@ -40,6 +40,7 @@
 
   fill("[data-legal-studio-name]", legal.businessName || c.studio.name);
   fill("[data-legal-owner]", legal.ownerFullName);
+  fill("[data-legal-form]", legal.legalForm);
   fill(
     "[data-legal-address-line1]",
     [legal.street, legal.houseNumber].filter(Boolean).join(" "),
