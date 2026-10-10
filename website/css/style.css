@@ -1001,6 +1001,14 @@ section {
   text-align: center;
 }
 
+.contact-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+  color: var(--color-text);
+}
+
 .contact-card p {
   color: var(--color-text-muted);
   margin: 0 0 18px;
