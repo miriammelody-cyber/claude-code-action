@@ -211,6 +211,45 @@
     }
   }
 
+  // ---- Bewertungen & Social Media ----
+  // Reiner Link-Button zu Google/Instagram, keine eingebetteten
+  // Rezensionen oder Feeds – so bleibt die Seite ohne Cookies.
+  const social = c.social || {};
+  const socialSection = document.querySelector("[data-social-section]");
+  const socialNavItem = document.querySelector("[data-social-nav-item]");
+  const googleReviewLink = document.querySelector("[data-google-review-link]");
+  const instagramFollowLink = document.querySelector(
+    "[data-instagram-follow-link]",
+  );
+
+  if (googleReviewLink) {
+    if (social.googleReviewUrl) {
+      googleReviewLink.href = social.googleReviewUrl;
+      googleReviewLink.removeAttribute("hidden");
+    } else {
+      googleReviewLink.setAttribute("hidden", "hidden");
+    }
+  }
+  if (instagramFollowLink) {
+    if (igLink) {
+      instagramFollowLink.href = igLink;
+      instagramFollowLink.removeAttribute("hidden");
+    } else {
+      instagramFollowLink.setAttribute("hidden", "hidden");
+    }
+  }
+
+  if (socialSection && (social.googleReviewUrl || igLink)) {
+    socialSection.removeAttribute("hidden");
+    if (socialNavItem) socialNavItem.removeAttribute("hidden");
+    document.querySelectorAll("[data-social-heading]").forEach((el) => {
+      el.textContent = social.heading || "";
+    });
+    document.querySelectorAll("[data-social-intro]").forEach((el) => {
+      el.textContent = social.intro || "";
+    });
+  }
+
   // ---- Studio gallery (photos & short muted looping videos) ----
   const gallerySection = document.querySelector("[data-gallery-section]");
   const galleryGrid = document.querySelector("[data-gallery-grid]");
