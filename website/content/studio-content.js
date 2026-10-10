@@ -171,6 +171,19 @@ const STUDIO_CONTENT = {
   },
 
   // -------------------------------------------------------------
+  // Bewertungen & Social Media
+  // -------------------------------------------------------------
+  // Reiner Link-Button zu Google, keine eingebetteten Rezensionen –
+  // dadurch bleibt die Seite ohne Cookies/Drittanbieter-Skripte.
+  // Leer lassen, um den jeweiligen Button auszublenden.
+  social: {
+    heading: "Bewertungen & Social Media",
+    intro:
+      "Wir freuen uns über deine Google-Bewertung und folgen auch gerne auf Instagram.",
+    googleReviewUrl: "https://share.google/u6Vt7VVrQBPYPSUI1",
+  },
+
+  // -------------------------------------------------------------
   // Verbindliche Buchung & Anzahlung
   // -------------------------------------------------------------
   // Gilt für Behandlungen und Skin Journeys mit fest inkludierter

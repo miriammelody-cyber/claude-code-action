@@ -271,6 +271,12 @@ a {
   color: var(--color-text);
 }
 
+.btn-google {
+  background: var(--color-card);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
 /* ---------- Sections ---------- */
 section {
   padding: 64px 0;
