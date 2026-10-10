@@ -1,8 +1,12 @@
 # M Beauty – Informationsseite
 
-Eine schlanke, statische Informationsseite (kein Buchungssystem) für M Beauty:
-Studio, Behandlungen & Preise, Kontakt ausschließlich über WhatsApp/Instagram,
-Impressum und Datenschutz.
+Eine schlanke, statische Informationsseite (kein eigenes Buchungssystem) für
+M Beauty: Studio, Behandlungen & Preise, Bewertungen, Kontakt primär über
+WhatsApp/Instagram, Impressum und Datenschutz. Die eigentliche Terminbuchung
+läuft über eine separate, eigenständige Buchungsplattform, deren Zugang Miri
+individuell freischaltet – auf dieser Seite gibt es dafür nur einen Hinweis
+mit Anfrage-Button (siehe `social`/`bookingAccess` in
+`content/studio-content.js`), keine Buchungsfunktion.
 
 ## Inhalte ändern
 

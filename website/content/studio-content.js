@@ -197,6 +197,22 @@ const STUDIO_CONTENT = {
     intro:
       "Wir freuen uns über deine Google-Bewertung und folgen auch gerne auf Instagram.",
     googleReviewUrl: "https://share.google/u6Vt7VVrQBPYPSUI1",
+
+    // Echte Google-Rezensionen als fester Text (kein Live-Widget, daher
+    // weiterhin ohne Cookies). Bei neuen Lieblingsbewertungen hier einfach
+    // ein weiteres Objekt ergänzen.
+    testimonials: [
+      {
+        author: "Melanie Wiegand",
+        rating: 5,
+        text: "Das Studio ist wunderschön und mit Liebe zum Detail eingerichtet. Die Atmosphäre ist mega entspannt. Miri versteht ihr Handwerk, schaut sich alles ganz genau an bevor sie einen Vorschlag macht aber man fühlt sich stets frei in seinen Entscheidungen was man für sich möchte. Ich habe zwar noch nicht so oft ein Kosmetik Studio aufgesucht, war aber erst bei Miri wirklich zufrieden. Anders als bei den anderen hat nichts weh getan, gebrannt oder war gerötet, sondern meine Haut war wunderschön weich, sauber und fühlte sich gepflegt und entspannt an. Auch die Ergebnisse für Brauen und Wimpern waren toll. Ich kann den Besuch jedem wirklich sehr empfehlen. Ich werde in jedem Fall ab jetzt immer zu Miri gehen und öfter 😊.",
+      },
+      {
+        author: "Rebecca L.",
+        rating: 5,
+        text: "Ich liebe es einfach hier! 10/10 Ich lasse mir bereits seit Jahren die Fingernägel in diesem Salon machen und bin seit einiger Zeit auch absolut begeistert von den Wimpernliftings. Die Arbeit ist jedes Mal super und qualitativ absolut hochwertig. Besonders hervorheben möchte ich die Sauberkeit – hier wird extrem auf Hygiene geachtet, was mir sehr wichtig ist. Die Inhaberin Miri ist einfach wundervoll, unheimlich nett und geht auf jeden noch so individuellen Wunsch ein. Der Besuch fühlt sich jedes Mal wie eine kleine Auszeit an. Absolute Herzensempfehlung!",
+      },
+    ],
   },
 
   // -------------------------------------------------------------

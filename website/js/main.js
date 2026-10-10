@@ -287,7 +287,16 @@
     }
   }
 
-  if (socialSection && (social.googleReviewUrl || igLink)) {
+  const testimonials = social.testimonials || [];
+  const testimonialsGrid = document.querySelector("[data-testimonials-grid]");
+  if (testimonialsGrid && testimonials.length) {
+    testimonialsGrid.innerHTML = testimonials.map(renderTestimonial).join("");
+  }
+
+  if (
+    socialSection &&
+    (social.googleReviewUrl || igLink || testimonials.length)
+  ) {
     socialSection.removeAttribute("hidden");
     if (socialNavItem) socialNavItem.removeAttribute("hidden");
     document.querySelectorAll("[data-social-heading]").forEach((el) => {
@@ -296,6 +305,26 @@
     document.querySelectorAll("[data-social-intro]").forEach((el) => {
       el.textContent = social.intro || "";
     });
+  }
+
+  function renderTestimonial(t) {
+    const rating = Math.max(0, Math.min(5, Number(t.rating) || 0));
+    const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+    return (
+      '<div class="testimonial-card">' +
+      '<div class="testimonial-stars" aria-label="' +
+      rating +
+      ' von 5 Sternen">' +
+      stars +
+      "</div>" +
+      '<p class="testimonial-text">' +
+      escapeHtml(t.text) +
+      "</p>" +
+      '<p class="testimonial-author">' +
+      escapeHtml(t.author) +
+      "</p>" +
+      "</div>"
+    );
   }
 
   // ---- Studio gallery (photos & short muted looping videos) ----
