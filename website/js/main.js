@@ -190,6 +190,54 @@
     document.body.classList.add("has-sticky-contact");
   }
 
+  // ---- Zugang zur Buchungsplattform (nur Hinweis + Anfrage, keine
+  // Buchungsfunktion auf dieser Seite) ----
+  const bookingAccess = c.bookingAccess || {};
+  const bookingAccessCard = document.querySelector(
+    "[data-booking-access-card]",
+  );
+  const bookingAccessWaLink = waNumber
+    ? "https://wa.me/" +
+      waNumber +
+      "?text=" +
+      encodeURIComponent(bookingAccess.whatsappPrefillMessage || "")
+    : null;
+
+  document
+    .querySelectorAll("[data-booking-access-whatsapp-link]")
+    .forEach((el) => {
+      if (bookingAccessWaLink) {
+        el.href = bookingAccessWaLink;
+        el.removeAttribute("hidden");
+      } else {
+        el.setAttribute("hidden", "hidden");
+      }
+    });
+  document
+    .querySelectorAll("[data-booking-access-instagram-link]")
+    .forEach((el) => {
+      if (igLink) {
+        el.href = igLink;
+        el.removeAttribute("hidden");
+      } else {
+        el.setAttribute("hidden", "hidden");
+      }
+    });
+
+  if (
+    bookingAccessCard &&
+    bookingAccess.heading &&
+    (bookingAccessWaLink || igLink)
+  ) {
+    bookingAccessCard.removeAttribute("hidden");
+    document.querySelectorAll("[data-booking-access-heading]").forEach((el) => {
+      el.textContent = bookingAccess.heading || "";
+    });
+    document.querySelectorAll("[data-booking-access-intro]").forEach((el) => {
+      el.textContent = bookingAccess.intro || "";
+    });
+  }
+
   // ---- Opening hours ----
   const hoursList = document.querySelector("[data-opening-hours]");
   if (hoursList) {
