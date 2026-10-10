@@ -22,16 +22,16 @@ const STUDIO_CONTENT = {
   // SEO / Browsertitel
   // -------------------------------------------------------------
   meta: {
-    title: "M Beauty – Beauty Studio in Krefeld",
+    title: "M-Beauty • Beauty Studio – Kosmetikstudio in Krefeld",
     description:
-      "M Beauty Studio in Krefeld: Facials, Microneedling, Diamond Glow und individuelle Skin Journeys. Informiere dich über unsere Behandlungen und Preise – Kontakt gerne per WhatsApp oder Instagram.",
+      "Kosmetikstudio in Krefeld: Microneedling, Diamond Microdermabrasion, Facials mit Hautanalyse, Korean Lash Lift & Gel-Nägel. Anfrage per WhatsApp.",
   },
 
   // -------------------------------------------------------------
   // Studio / Hero-Bereich
   // -------------------------------------------------------------
   studio: {
-    name: "M Beauty",
+    name: "M-Beauty",
     slogan: "Beauty Studio",
     tagline: "Your Moment. Your Glow.",
     city: "Krefeld",
@@ -39,7 +39,7 @@ const STUDIO_CONTENT = {
 
     // Kurzer Einleitungstext im Hero-Bereich (oben auf der Seite)
     heroText:
-      "Herzlich willkommen bei M Beauty in Krefeld. Hier findest du alle Informationen zu unseren Behandlungen, Preisen und wie du uns erreichst.",
+      "Herzlich willkommen bei M-Beauty • Beauty Studio in Krefeld. Hier findest du alle Informationen zu unseren Behandlungen, Preisen und wie du uns erreichst.",
   },
 
   // -------------------------------------------------------------
@@ -62,13 +62,13 @@ const STUDIO_CONTENT = {
 
     intro: {
       heading:
-        "Hallo, ich bin Miri – Gründerin und das Gesicht hinter M Beauty.",
+        "Hallo, ich bin Miri – Gründerin und das Gesicht hinter M-Beauty.",
       paragraphs: [
         "Ich bin Mama von zwei Jungs, ehemalige OP-Schwester und seit 2014 im Beautybereich tätig. Was damals mit Nageldesign als Nebentätigkeit begann, entwickelte sich über die Jahre zu meiner großen Leidenschaft.",
         "Meine Erfahrung aus dem medizinischen Bereich prägt meine Arbeit bis heute: Präzision, Hygiene und ein geschulter Blick für Ästhetik sind für mich selbstverständlich.",
-        "Mit M Beauty habe ich einen Ort geschaffen, an dem professionelle Beautybehandlungen und persönliche Auszeit zusammenkommen. In meinem Homestudio erwartet dich eine ruhige, entspannte Atmosphäre mit individueller Beratung und viel Liebe zum Detail.",
+        "Mit M-Beauty habe ich einen Ort geschaffen, an dem professionelle Beautybehandlungen und persönliche Auszeit zusammenkommen. In meinem Homestudio erwartet dich eine ruhige, entspannte Atmosphäre mit individueller Beratung und viel Liebe zum Detail.",
         "Mein Ziel ist es, deine natürliche Schönheit zu unterstreichen und dir eine kleine Pause vom Alltag zu schenken.",
-        "Ich freue mich darauf, dich bei M Beauty willkommen zu heißen.",
+        "Ich freue mich darauf, dich bei M-Beauty willkommen zu heißen.",
       ],
       signature: "Deine Miri",
       tagline: "Natürlich. Gepflegt. Mit Liebe zum Detail.",
@@ -79,8 +79,8 @@ const STUDIO_CONTENT = {
       paragraphs: [
         "2014 begann meine Reise im Beautybereich mit dem Nageldesign und meinem eigenen Nebengewerbe.",
         "Parallel dazu war ich viele Jahre im medizinischen Bereich und als OP-Schwester tätig. Diese Zeit hat meine Arbeitsweise nachhaltig geprägt – insbesondere meinen Anspruch an Hygiene, Präzision und sorgfältiges Arbeiten.",
-        "Mit der Zeit wuchs der Wunsch, meine Leidenschaft für Beauty wieder stärker in den Mittelpunkt zu stellen. Heute widme ich mich mit M Beauty meinem Herzensprojekt und entwickle mein Wissen durch regelmäßige Fort- und Weiterbildungen kontinuierlich weiter.",
-        "Aus einer Nebentätigkeit wurde eine Leidenschaft – und schließlich M Beauty.",
+        "Mit der Zeit wuchs der Wunsch, meine Leidenschaft für Beauty wieder stärker in den Mittelpunkt zu stellen. Heute widme ich mich mit M-Beauty meinem Herzensprojekt und entwickle mein Wissen durch regelmäßige Fort- und Weiterbildungen kontinuierlich weiter.",
+        "Aus einer Nebentätigkeit wurde eine Leidenschaft – und schließlich M-Beauty.",
       ],
     },
 
@@ -106,7 +106,7 @@ const STUDIO_CONTENT = {
       heading: "Meine Philosophie",
       paragraphs: [
         "Schönheit bedeutet für mich nicht, sich zu verändern, sondern die eigene natürliche Schönheit hervorzuheben.",
-        "Bei M Beauty stehen Qualität, Wohlbefinden und persönliche Betreuung im Mittelpunkt. Jede Behandlung soll nicht nur ein schönes Ergebnis schaffen, sondern auch eine kleine Auszeit vom Alltag sein.",
+        "Bei M-Beauty stehen Qualität, Wohlbefinden und persönliche Betreuung im Mittelpunkt. Jede Behandlung soll nicht nur ein schönes Ergebnis schaffen, sondern auch eine kleine Auszeit vom Alltag sein.",
         "Durch meinen medizinischen Hintergrund lege ich besonderen Wert auf Hygiene, Präzision und sorgfältiges Arbeiten. Gleichzeitig möchte ich eine Atmosphäre schaffen, in der du dich willkommen, entspannt und gut aufgehoben fühlst.",
         "Mein Anspruch sind natürliche, typgerechte Ergebnisse, die zu dir passen – professionell umgesetzt und mit Liebe zum Detail.",
       ],
@@ -131,7 +131,7 @@ const STUDIO_CONTENT = {
     {
       type: "video",
       src: "assets/studio-eindruecke.mp4",
-      alt: "Kurzer Rundgang durchs M Beauty Studio",
+      alt: "Kurzer Rundgang durchs M-Beauty Studio",
     },
     {
       type: "image",
@@ -146,7 +146,7 @@ const STUDIO_CONTENT = {
     {
       type: "image",
       src: "assets/studio-3.jpg",
-      alt: "M Beauty Logo an der Studiowand",
+      alt: "M-Beauty Logo an der Studiowand",
     },
   ],
 
@@ -159,7 +159,7 @@ const STUDIO_CONTENT = {
 
     // Vorausgefüllter Text, der beim Öffnen von WhatsApp erscheint
     whatsappPrefillMessage:
-      "Hallo M Beauty, ich interessiere mich für eine Behandlung und würde gerne mehr erfahren.",
+      "Hallo M-Beauty, ich interessiere mich für eine Behandlung und würde gerne mehr erfahren.",
 
     instagramUrl: "https://www.instagram.com/m.beauty.beauty.studio.krefeld/",
     instagramHandle: "@m.beauty.beauty.studio.krefeld",
@@ -676,7 +676,7 @@ const STUDIO_CONTENT = {
   // -------------------------------------------------------------
   legal: {
     ownerFullName: "Miriam Melody Hilgeland",
-    businessName: "M Beauty - Beauty Studio",
+    businessName: "M-Beauty • Beauty Studio",
     legalForm: "Einzelunternehmen",
     kleinunternehmer: true, // Kleinunternehmerregelung gem. § 19 UStG
 
