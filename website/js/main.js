@@ -348,11 +348,13 @@
     const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
     const isLong = t.text.length > 260;
     const bodyHtml = isLong
-      ? '<p class="testimonial-text">' +
+      ? '<details class="testimonial-details">' +
+        "<summary>" +
+        '<span class="testimonial-preview">' +
         escapeHtml(testimonialPreview(t.text, 200)) +
-        "</p>" +
-        '<details class="testimonial-details">' +
-        "<summary>Vollständige Bewertung lesen</summary>" +
+        "</span>" +
+        '<span class="testimonial-read-more">Vollständige Bewertung lesen</span>' +
+        "</summary>" +
         '<div class="testimonial-text-full">' +
         testimonialTextToHtml(t.text) +
         "</div></details>"

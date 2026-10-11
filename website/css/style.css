@@ -1441,13 +1441,29 @@ section {
 .testimonial-details summary {
   cursor: pointer;
   list-style: none;
-  color: var(--color-accent);
-  font-weight: 600;
-  font-size: 0.82rem;
 }
 
 .testimonial-details summary::-webkit-details-marker {
   display: none;
+}
+
+.testimonial-preview {
+  display: block;
+  color: var(--color-text);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0 0 8px;
+}
+
+.testimonial-details[open] .testimonial-preview {
+  display: none;
+}
+
+.testimonial-read-more {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.82rem;
 }
 
 .testimonial-details .testimonial-text-full {
