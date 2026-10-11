@@ -525,7 +525,9 @@
   // Gemeinsamer Baustein für "Anzahlung bei Buchung" / "Restbetrag" –
   // wird bei Einzelbehandlungen, Kuren und Skin Journeys gleichermaßen
   // verwendet, damit die Anzahlungsregel überall gleich aussieht.
-  function renderDepositBlock(priceStr, depositStr) {
+  // remainderRemark ist optional und ergänzt den Hinweistext, z. B. um
+  // zu sagen, wann der Restbetrag fällig wird.
+  function renderDepositBlock(priceStr, depositStr, remainderRemark) {
     const remainder = computeRemainder(priceStr, depositStr);
     return (
       '<div class="deposit-block">' +
@@ -537,7 +539,9 @@
           escapeHtml(remainder) +
           "</span></span>"
         : "") +
-      "<span class='deposit-remark'>Wird vollständig auf den Gesamtpreis angerechnet.</span>" +
+      "<span class='deposit-remark'>Wird vollständig auf den Gesamtpreis angerechnet." +
+      (remainderRemark ? " " + escapeHtml(remainderRemark) : "") +
+      "</span>" +
       "</div>"
     );
   }
@@ -680,7 +684,13 @@
           escapeHtml(completeSavings) +
           "</span>"
         : "") +
-      (j.deposit ? renderDepositBlock(j.complete, j.deposit) : "") +
+      (j.deposit
+        ? renderDepositBlock(
+            j.complete,
+            j.deposit,
+            "Restbetrag fällig beim ersten Termin.",
+          )
+        : "") +
       '<span class="journey-recommended">Empfohlen für eine optimal abgestimmte Begleitung</span>' +
       "</div>" +
       '<div class="journey-price-block">' +
