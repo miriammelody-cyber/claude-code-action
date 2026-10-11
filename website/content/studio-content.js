@@ -299,6 +299,17 @@ const STUDIO_CONTENT = {
             "Für eine intensivere Ausreinigung empfehlen wir M Deep Clean.",
         },
         {
+          name: "M Express Glow",
+          price: "69 €",
+          duration: "ca. 45 Minuten",
+          description:
+            "Eine entspannende Gesichtsbehandlung für alle, die hochwertige Hautpflege genießen möchten.",
+          whatToExpect:
+            "Kurze Anamnese, kosmetische Sicht- und Tastbeurteilung, sanfte Reinigung, Toner, individuell abgestimmte Pflegemaske sowie Abschlusspflege und Sonnenschutz.",
+          besonderheiten:
+            "Ohne digitale Hautmessung und ohne schriftlichen Pflegeplan. Eine Massage (ca. 15–20 Minuten, je nach Hautverträglichkeit) kann für 20 € dazugebucht werden.",
+        },
+        {
           name: "M Deep Clean",
           price: "85 €",
           duration: "ca. 75 Minuten",
@@ -310,6 +321,36 @@ const STUDIO_CONTENT = {
             "Im Mittelpunkt stehen die Vorbereitung der Haut und die sorgfältige manuelle Ausreinigung. Die Behandlung wird anschließend mit hautzustandsgerechter Wirkstoffpflege und Maske abgeschlossen.",
           besonderheiten:
             "Vapozon wird nur eingesetzt, wenn der Hautzustand dafür geeignet ist.",
+        },
+      ],
+    },
+    {
+      id: "skin-concept",
+      name: "Hautanalyse & Pflegekonzept",
+      treatments: [
+        {
+          name: "M Skin Check",
+          price: "39 €",
+          duration: "ca. 30 Minuten",
+          description:
+            "Hautanalyse mit Feuchtigkeits- und Ölgehaltsmessung und kompakter Pflegeroutine – ohne Behandlung.",
+          whatToExpect:
+            "Nach einer kurzen Anamnese wird deine Haut kosmetisch beurteilt, Feuchtigkeits- und Ölgehalt werden mit einem Gerät gemessen. Du erhältst individuelle Produktempfehlungen und einen kompakten Pflegeplan.",
+          besonderheiten:
+            "Ab einem Pflegeprodukteinkauf von mindestens 50 € beim selben Termin entfällt die Beratungsgebühr von 39 € vollständig. Keine Kaufverpflichtung, Produkte werden separat berechnet.",
+        },
+        {
+          name: "M Beauty Skin Concept",
+          price: "129 €",
+          duration: "",
+          description:
+            "Gesichtsbehandlung, umfassende Hautanalyse und ausführlicher individueller Pflege- und Behandlungsplan für bis zu zwölf Wochen.",
+          hautziel:
+            "Für alle, die ihre Haut professionell analysieren lassen und eine individuell geplante Pflegeroutine über mehrere Wochen aufbauen möchten.",
+          whatToExpect:
+            "Nach Anamnese und Hautanalyse (inkl. Messung von Öl- und Feuchtigkeitsgehalt mit einem Gerät) folgt eine Behandlung nach Hautbedarf – je nach Hautzustand z. B. Reinigung, Tonisierung, Peeling, Vapozon, Ausreinigung, Massage, Maske, Seren sowie Abschlusspflege und Sonnenschutz. Anschließend wird gemeinsam ein individueller Pflegeplan besprochen.",
+          besonderheiten:
+            "Folgebehandlungen und empfohlene Produkte werden bei Bedarf separat bezahlt – keine Kaufverpflichtung. Die weiteren Termine des 12-Wochen-Plans können flexibel nach Wunsch und Budget gebucht werden, jeweils einzeln bei dem jeweiligen Termin bezahlt – anders als bei den M Ultimate Skin Journeys, die als Gesamtpaket mit Anzahlung gebucht werden.",
         },
       ],
     },
