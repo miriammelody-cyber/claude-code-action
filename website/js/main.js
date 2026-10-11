@@ -293,6 +293,35 @@
     testimonialsGrid.innerHTML = testimonials.map(renderTestimonial).join("");
   }
 
+  const testimonialsSubheader = document.querySelector(
+    "[data-testimonials-subheader]",
+  );
+  if (testimonialsSubheader && testimonials.length) {
+    testimonialsSubheader.removeAttribute("hidden");
+    document.querySelectorAll("[data-testimonials-heading]").forEach((el) => {
+      el.textContent = social.testimonialsHeading || "";
+    });
+    document
+      .querySelectorAll("[data-testimonials-subheading]")
+      .forEach((el) => {
+        el.textContent = social.testimonialsSubheading || "";
+      });
+  }
+
+  const testimonialsCta = document.querySelector("[data-testimonials-cta]");
+  if (testimonialsCta && testimonials.length && (waLink || igLink)) {
+    testimonialsCta.removeAttribute("hidden");
+    const cta = social.testimonialsCta || {};
+    document
+      .querySelectorAll("[data-testimonials-cta-heading]")
+      .forEach((el) => {
+        el.textContent = cta.heading || "";
+      });
+    document.querySelectorAll("[data-testimonials-cta-intro]").forEach((el) => {
+      el.textContent = cta.intro || "";
+    });
+  }
+
   if (
     socialSection &&
     (social.googleReviewUrl || igLink || testimonials.length)
@@ -307,22 +336,64 @@
     });
   }
 
-  function renderTestimonial(t) {
+  // Google-Rezensionen enthalten teilweise Absätze (Leerzeile) oder
+  // einzelne Zeilenumbrüche – beides bleibt als <p>/<br> erhalten, damit
+  // der Originaltext optisch unangetastet bleibt.
+  function testimonialTextToHtml(text) {
+    return text
+      .split(/\n\n+/)
+      .map((para) => "<p>" + escapeHtml(para).replace(/\n/g, "<br>") + "</p>")
+      .join("");
+  }
+
+  // Kurzer, unveränderter Anfangsausschnitt für lange Bewertungen – der
+  // volle Originaltext bleibt über "Vollständige Bewertung lesen"
+  // erreichbar, es wird dabei nichts umformuliert oder gekürzt entfernt.
+  function testimonialPreview(text, maxLen) {
+    const firstPara = text.split(/\n\n+/)[0].replace(/\n/g, " ");
+    if (firstPara.length <= maxLen) return firstPara;
+    const cut = firstPara.slice(0, maxLen);
+    const lastSpace = cut.lastIndexOf(" ");
+    return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + "…";
+  }
+
+  function renderTestimonial(t, index) {
     const rating = Math.max(0, Math.min(5, Number(t.rating) || 0));
     const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+    const isLong = t.text.length > 260;
+    const bodyHtml = isLong
+      ? '<p class="testimonial-text">' +
+        escapeHtml(testimonialPreview(t.text, 200)) +
+        "</p>" +
+        '<details class="testimonial-details">' +
+        "<summary>Vollständige Bewertung lesen</summary>" +
+        '<div class="testimonial-text-full">' +
+        testimonialTextToHtml(t.text) +
+        "</div></details>"
+      : '<div class="testimonial-text">' +
+        testimonialTextToHtml(t.text) +
+        "</div>";
+
     return (
-      '<div class="testimonial-card">' +
+      '<div class="testimonial-card" data-reveal style="transition-delay: ' +
+      index * 90 +
+      'ms">' +
+      '<div class="testimonial-quote-icon" aria-hidden="true">“</div>' +
       '<div class="testimonial-stars" aria-label="' +
       rating +
       ' von 5 Sternen">' +
       stars +
       "</div>" +
-      '<p class="testimonial-text">' +
-      escapeHtml(t.text) +
-      "</p>" +
+      bodyHtml +
+      '<div class="testimonial-footer">' +
       '<p class="testimonial-author">' +
       escapeHtml(t.author) +
       "</p>" +
+      (t.focus
+        ? "<span class='testimonial-badge'>" + escapeHtml(t.focus) + "</span>"
+        : "") +
+      "</div>" +
+      '<span class="testimonial-source">Google-Bewertung</span>' +
       "</div>"
     );
   }
