@@ -99,12 +99,42 @@
             },
             {
               "@type": "Offer",
+              "price": "69.00",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M Express Glow",
+                "description": "Entspannende 45-minütige Gesichtsbehandlung mit sanfter Reinigung und individuell abgestimmter Pflegemaske."
+              }
+            },
+            {
+              "@type": "Offer",
               "price": "85.00",
               "priceCurrency": "EUR",
               "itemOffered": {
                 "@type": "Service",
                 "name": "M Deep Clean",
                 "description": "Intensive Gesichtsreinigung mit sorgfältiger manueller Ausreinigung."
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "39.00",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M Skin Check",
+                "description": "Hautanalyse mit Feuchtigkeits- und Ölgehaltsmessung und kompakter Pflegeroutine, ohne Behandlung."
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "129.00",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M Beauty Skin Concept",
+                "description": "Gesichtsbehandlung, umfassende Hautanalyse und individueller Pflege- und Behandlungsplan für bis zu zwölf Wochen."
               }
             },
             {
@@ -246,6 +276,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Jede Gesichtsbehandlung beginnt mit einer Hautanalyse: Ich messe Feuchtigkeit und Fettgehalt deiner Haut digital und beurteile sie zusätzlich durch genaues Ansehen und Ertasten. Je nach Hautziel passt zum Beispiel das M Essential Facial für Pflege und Feuchtigkeit, M Deep Clean bei verstopften Poren, M Ultrasound Glow für eine intensive Wirkstoffversorgung oder M Diamond Glow für ein verfeinertes Hautbild. Für längerfristige Hautziele gibt es die M Ultimate Skin Journeys über etwa 12 Wochen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der Unterschied zwischen M Beauty Skin Concept und einer M Ultimate Skin Journey?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Beim M Beauty Skin Concept (129 €) bekommst du einen ausführlichen Ersttermin mit Hautanalyse, Behandlung nach Hautbedarf und einem individuellen Pflege- und Behandlungsplan für bis zu zwölf Wochen. Die weiteren Termine aus diesem Plan werden danach flexibel nach deinem Wunsch und Budget gebucht und jeweils einzeln bezahlt. Eine M Ultimate Skin Journey ist dagegen ein festes 12-Wochen-Programm mit sechs enthaltenen Behandlungsterminen zum vorher vereinbarten Gesamtpreis – mit Anzahlung bei Buchung und Restzahlung beim ersten Termin."
             }
           },
           {
@@ -565,6 +603,23 @@
               </p>
             </details>
             <details class="faq-item">
+              <summary>
+                Was ist der Unterschied zwischen M Beauty Skin Concept und einer
+                M Ultimate Skin Journey?
+              </summary>
+              <p>
+                Beim M Beauty Skin Concept (129 €) bekommst du einen
+                ausführlichen Ersttermin mit Hautanalyse, Behandlung nach
+                Hautbedarf und einem individuellen Pflege- und Behandlungsplan
+                für bis zu zwölf Wochen. Die weiteren Termine aus diesem Plan
+                werden danach flexibel nach deinem Wunsch und Budget gebucht und
+                jeweils einzeln bezahlt. Eine M Ultimate Skin Journey ist
+                dagegen ein festes 12-Wochen-Programm mit sechs enthaltenen
+                Behandlungsterminen zum vorher vereinbarten Gesamtpreis – mit
+                Anzahlung bei Buchung und Restzahlung beim ersten Termin.
+              </p>
+            </details>
+            <details class="faq-item">
               <summary>Wie lange hält ein Korean Lash Lift?</summary>
               <p>
                 Je nach Wimpernzyklus hält das Ergebnis meist 6–8 Wochen. Beim
@@ -629,7 +684,35 @@
               >📷 Folg uns auf Instagram</a
             >
           </div>
+
+          <div
+            class="testimonials-subheader"
+            data-testimonials-subheader
+            hidden
+          >
+            <h3 data-testimonials-heading></h3>
+            <p data-testimonials-subheading></p>
+          </div>
           <div class="testimonial-grid" data-testimonials-grid></div>
+
+          <div class="testimonials-cta" data-testimonials-cta hidden>
+            <h3 data-testimonials-cta-heading></h3>
+            <p data-testimonials-cta-intro></p>
+            <div class="hero-actions">
+              <a class="btn btn-whatsapp" data-whatsapp-link href="#" hidden
+                >💬 Per WhatsApp anfragen</a
+              >
+              <a
+                class="btn btn-instagram"
+                data-instagram-link
+                href="#"
+                target="_blank"
+                rel="noopener"
+                hidden
+                >📷 Über Instagram schreiben</a
+              >
+            </div>
+          </div>
         </div>
       </section>
 

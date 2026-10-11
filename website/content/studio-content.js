@@ -198,21 +198,63 @@ const STUDIO_CONTENT = {
       "Wir freuen uns über deine Google-Bewertung und folgen auch gerne auf Instagram.",
     googleReviewUrl: "https://share.google/u6Vt7VVrQBPYPSUI1",
 
+    testimonialsHeading: "Was meine Kundinnen und Kunden sagen",
+    testimonialsSubheading:
+      "Echte Erfahrungen aus dem M-Beauty Studio in Krefeld.",
+
     // Echte Google-Rezensionen als fester Text (kein Live-Widget, daher
-    // weiterhin ohne Cookies). Bei neuen Lieblingsbewertungen hier einfach
-    // ein weiteres Objekt ergänzen.
+    // weiterhin ohne Cookies). Reihenfolge bewusst so gewählt, dass zuerst
+    // Hygiene/Professionalität, dann Wohlfühlatmosphäre/Herzlichkeit, dann
+    // Nagel-Qualität und zuletzt Beratung/Hautpflege sichtbar werden.
+    // "focus" ist ein optionales kleines Schwerpunkt-Label auf der Karte.
+    // Bei neuen Lieblingsbewertungen hier einfach ein weiteres Objekt
+    // ergänzen – lange Texte (> 260 Zeichen) werden automatisch hinter
+    // "Vollständige Bewertung lesen" eingeklappt, der Originaltext bleibt
+    // dabei immer unverändert und vollständig zugänglich.
     testimonials: [
       {
-        author: "Melanie Wiegand",
+        author: "Vivien Hrabovszki",
         rating: 5,
-        text: "Das Studio ist wunderschön und mit Liebe zum Detail eingerichtet. Die Atmosphäre ist mega entspannt. Miri versteht ihr Handwerk, schaut sich alles ganz genau an bevor sie einen Vorschlag macht aber man fühlt sich stets frei in seinen Entscheidungen was man für sich möchte. Ich habe zwar noch nicht so oft ein Kosmetik Studio aufgesucht, war aber erst bei Miri wirklich zufrieden. Anders als bei den anderen hat nichts weh getan, gebrannt oder war gerötet, sondern meine Haut war wunderschön weich, sauber und fühlte sich gepflegt und entspannt an. Auch die Ergebnisse für Brauen und Wimpern waren toll. Ich kann den Besuch jedem wirklich sehr empfehlen. Ich werde in jedem Fall ab jetzt immer zu Miri gehen und öfter 😊.",
+        focus: "Hygiene & Beratung",
+        text: "Ein wunderschönes Beauty Stufio und eine echte Wohlfühloase! 💅✨ Sehr freundliche Atmosphäre, kompetente Beratung und eine verständliche Erklärung der einzelnen Behandlungsschritte. Die Hygiene ist top und man fühlt sich rundum gut aufgehoben. Hier wird mit viel Sorgfalt und Professionalität gearbeitet. Ich kann es wirklich von Herzen weiterempfehlen, ich komme gerne wieder! ❤️",
+      },
+      {
+        author: "Emely Markel",
+        rating: 5,
+        focus: "Hygiene & Herzlichkeit",
+        text: "Ich bin wirklich super zufrieden mit Miris Arbeit! 🥰 Sie arbeitet immer sehr ordentlich, sauber und hygienisch. Besonders toll finde ich, dass sie für jeden Kunde eine eigene Feile verwendet und ihre Materialien sowie ihr Arbeitsplatz immer sauber sind. Man merkt einfach, wie viel Wert sie auf Hygiene und sorgfältige Arbeit legt.\n\nAußerdem ist Miri unglaublich freundlich und herzlich, sodass man sich bei ihr direkt wohlfühlt. Ich bin jedes Mal aufs Neue begeistert von ihrer Arbeit und freue mich immer wieder auf meinen nächsten Termin! ❤️\n\nIch kann sie von Herzen weiterempfehlen! 🥰✨",
+      },
+      {
+        author: "Jessica Markel",
+        rating: 5,
+        focus: "Nägel",
+        text: "Ich bin absolut begeistert von M Beauty! Die Nägel sehen nicht nur wunderschön und sauber gearbeitet aus, sondern halten auch bombenfest. Selbst im Alltag gibt es keinerlei Absplitterungen oder Anheben. Wer Wert auf Qualität, Präzision und langanhaltend schöne Nägel legt, ist hier genau richtig. Ich komme definitiv wieder! 🚀✨",
       },
       {
         author: "Rebecca L.",
         rating: 5,
+        focus: "Nägel & Hygiene",
         text: "Ich liebe es einfach hier! 10/10 Ich lasse mir bereits seit Jahren die Fingernägel in diesem Salon machen und bin seit einiger Zeit auch absolut begeistert von den Wimpernliftings. Die Arbeit ist jedes Mal super und qualitativ absolut hochwertig. Besonders hervorheben möchte ich die Sauberkeit – hier wird extrem auf Hygiene geachtet, was mir sehr wichtig ist. Die Inhaberin Miri ist einfach wundervoll, unheimlich nett und geht auf jeden noch so individuellen Wunsch ein. Der Besuch fühlt sich jedes Mal wie eine kleine Auszeit an. Absolute Herzensempfehlung!",
       },
+      {
+        author: "Melanie Wiegand",
+        rating: 5,
+        focus: "Beratung & Hautpflege",
+        text: "Das Studio ist wunderschön und mit Liebe zum Detail eingerichtet. Die Atmosphäre ist mega entspannt. Miri versteht ihr Handwerk, schaut sich alles ganz genau an bevor sie einen Vorschlag macht aber man fühlt sich stets frei in seinen Entscheidungen was man für sich möchte. Ich habe zwar noch nicht so oft ein Kosmetik Studio aufgesucht, war aber erst bei Miri wirklich zufrieden. Anders als bei den anderen hat nichts weh getan, gebrannt oder war gerötet, sondern meine Haut war wunderschön weich, sauber und fühlte sich gepflegt und entspannt an. Auch die Ergebnisse für Brauen und Wimpern waren toll. Ich kann den Besuch jedem wirklich sehr empfehlen. Ich werde in jedem Fall ab jetzt immer zu Miri gehen und öfter 😊.",
+      },
+      {
+        author: "Lena",
+        rating: 5,
+        focus: "Vertrauen",
+        text: "Ich habe bereits dutzende Nagel- und Kosmetik Studios besucht. Absolut NIEMAND kommt an die liebe Miri ran.\nIch bin schon länger Ihre Kundin und habe mitverfolgt, wie sie sich von Ihrem kleinen (bereits sehr professionellem) Studio, zu einer eigenen Marke entwickelt hat.\nSie hat weder Kosten noch Mühen gescheut, ihren Kundinnen stets das Beste zu bieten.\nJedes Mal wenn ich bei Ihr war hat sie mich gefragt „was könnte meinen Kundinnen hier noch fehlen?“ „Ich möchte die und die Schulung machen, wie fänden meine Kundinnen das wohl“….\n\nInzwischen hat sie ihr Studio wunderschön ausgebaut und ist nicht nur die BESTE in dem was sie tut, sondern auch mit Abstand die hygienischste und liebevollste Nagel-, Wimpern- & Kosmetikfee bei der ich je war.\n\nDANKE MIRI ❤️",
+      },
     ],
+
+    testimonialsCta: {
+      heading: "Möchtest du dir selbst ein Bild machen?",
+      intro:
+        "Dann schreib mir gerne per WhatsApp oder Instagram und wir finden gemeinsam die passende Behandlung für dich.",
+    },
   },
 
   // -------------------------------------------------------------
@@ -257,6 +299,17 @@ const STUDIO_CONTENT = {
             "Für eine intensivere Ausreinigung empfehlen wir M Deep Clean.",
         },
         {
+          name: "M Express Glow",
+          price: "69 €",
+          duration: "ca. 45 Minuten",
+          description:
+            "Eine entspannende Gesichtsbehandlung für alle, die hochwertige Hautpflege genießen möchten.",
+          whatToExpect:
+            "Kurze Anamnese, kosmetische Sicht- und Tastbeurteilung, sanfte Reinigung, Toner, individuell abgestimmte Pflegemaske sowie Abschlusspflege und Sonnenschutz.",
+          besonderheiten:
+            "Ohne digitale Hautmessung und ohne schriftlichen Pflegeplan. Eine Massage (ca. 15–20 Minuten, je nach Hautverträglichkeit) kann für 20 € dazugebucht werden.",
+        },
+        {
           name: "M Deep Clean",
           price: "85 €",
           duration: "ca. 75 Minuten",
@@ -268,6 +321,36 @@ const STUDIO_CONTENT = {
             "Im Mittelpunkt stehen die Vorbereitung der Haut und die sorgfältige manuelle Ausreinigung. Die Behandlung wird anschließend mit hautzustandsgerechter Wirkstoffpflege und Maske abgeschlossen.",
           besonderheiten:
             "Vapozon wird nur eingesetzt, wenn der Hautzustand dafür geeignet ist.",
+        },
+      ],
+    },
+    {
+      id: "skin-concept",
+      name: "Hautanalyse & Pflegekonzept",
+      treatments: [
+        {
+          name: "M Skin Check",
+          price: "39 €",
+          duration: "ca. 30 Minuten",
+          description:
+            "Hautanalyse mit Feuchtigkeits- und Ölgehaltsmessung und kompakter Pflegeroutine – ohne Behandlung.",
+          whatToExpect:
+            "Nach einer kurzen Anamnese wird deine Haut kosmetisch beurteilt, Feuchtigkeits- und Ölgehalt werden mit einem Gerät gemessen. Du erhältst individuelle Produktempfehlungen und einen kompakten Pflegeplan.",
+          besonderheiten:
+            "Ab einem Pflegeprodukteinkauf von mindestens 50 € beim selben Termin entfällt die Beratungsgebühr von 39 € vollständig. Keine Kaufverpflichtung, Produkte werden separat berechnet.",
+        },
+        {
+          name: "M Beauty Skin Concept",
+          price: "129 €",
+          duration: "",
+          description:
+            "Gesichtsbehandlung, umfassende Hautanalyse und ausführlicher individueller Pflege- und Behandlungsplan für bis zu zwölf Wochen.",
+          hautziel:
+            "Für alle, die ihre Haut professionell analysieren lassen und eine individuell geplante Pflegeroutine über mehrere Wochen aufbauen möchten.",
+          whatToExpect:
+            "Nach Anamnese und Hautanalyse (inkl. Messung von Öl- und Feuchtigkeitsgehalt mit einem Gerät) folgt eine Behandlung nach Hautbedarf – je nach Hautzustand z. B. Reinigung, Tonisierung, Peeling, Vapozon, Ausreinigung, Massage, Maske, Seren sowie Abschlusspflege und Sonnenschutz. Anschließend wird gemeinsam ein individueller Pflegeplan besprochen.",
+          besonderheiten:
+            "Folgebehandlungen und empfohlene Produkte werden bei Bedarf separat bezahlt – keine Kaufverpflichtung. Die weiteren Termine des 12-Wochen-Plans können flexibel nach Wunsch und Budget gebucht werden, jeweils einzeln bei dem jeweiligen Termin bezahlt – anders als bei den M Ultimate Skin Journeys, die als Gesamtpaket mit Anzahlung gebucht werden.",
         },
       ],
     },
