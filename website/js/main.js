@@ -308,20 +308,6 @@
       });
   }
 
-  const testimonialsCta = document.querySelector("[data-testimonials-cta]");
-  if (testimonialsCta && testimonials.length && (waLink || igLink)) {
-    testimonialsCta.removeAttribute("hidden");
-    const cta = social.testimonialsCta || {};
-    document
-      .querySelectorAll("[data-testimonials-cta-heading]")
-      .forEach((el) => {
-        el.textContent = cta.heading || "";
-      });
-    document.querySelectorAll("[data-testimonials-cta-intro]").forEach((el) => {
-      el.textContent = cta.intro || "";
-    });
-  }
-
   if (
     socialSection &&
     (social.googleReviewUrl || igLink || testimonials.length)
