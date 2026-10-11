@@ -249,12 +249,6 @@ const STUDIO_CONTENT = {
         text: "Ich habe bereits dutzende Nagel- und Kosmetik Studios besucht. Absolut NIEMAND kommt an die liebe Miri ran.\nIch bin schon länger Ihre Kundin und habe mitverfolgt, wie sie sich von Ihrem kleinen (bereits sehr professionellem) Studio, zu einer eigenen Marke entwickelt hat.\nSie hat weder Kosten noch Mühen gescheut, ihren Kundinnen stets das Beste zu bieten.\nJedes Mal wenn ich bei Ihr war hat sie mich gefragt „was könnte meinen Kundinnen hier noch fehlen?“ „Ich möchte die und die Schulung machen, wie fänden meine Kundinnen das wohl“….\n\nInzwischen hat sie ihr Studio wunderschön ausgebaut und ist nicht nur die BESTE in dem was sie tut, sondern auch mit Abstand die hygienischste und liebevollste Nagel-, Wimpern- & Kosmetikfee bei der ich je war.\n\nDANKE MIRI ❤️",
       },
     ],
-
-    testimonialsCta: {
-      heading: "Möchtest du dir selbst ein Bild machen?",
-      intro:
-        "Dann schreib mir gerne per WhatsApp oder Instagram und wir finden gemeinsam die passende Behandlung für dich.",
-    },
   },
 
   // -------------------------------------------------------------
@@ -287,17 +281,6 @@ const STUDIO_CONTENT = {
       id: "basic-facials",
       name: "Basic Facials",
       treatments: [
-        {
-          name: "M Essential Facial",
-          price: "69 €",
-          duration: "ca. 60 Minuten",
-          description:
-            "Individuelle klassische Gesichtsbehandlung für Pflege, Feuchtigkeit und ein gepflegtes Hautgefühl.",
-          whatToExpect:
-            "Die Behandlung wird an den aktuellen Hautzustand angepasst und kann unter anderem Reinigung, geeignetes Peeling, Wirkstoffpflege, Massage, Maske und Abschlusspflege enthalten. Bei Bedarf kann eine leichte Ausreinigung integriert werden.",
-          besonderheiten:
-            "Für eine intensivere Ausreinigung empfehlen wir M Deep Clean.",
-        },
         {
           name: "M Express Glow",
           price: "69 €",
@@ -640,12 +623,12 @@ const STUDIO_CONTENT = {
           "Feuchtigkeitsarme, fahle oder spannende Haut ohne ausgeprägte entzündliche Problematik.",
         fokus: "Hydration + Glow + apparative Wirkstoffversorgung",
         plan: [
-          { week: "0", treatment: "M Essential Facial" },
+          { week: "0", treatment: "M Journey Classic" },
           { week: "2", treatment: "M Ultrasound Glow" },
           { week: "4", treatment: "M Diamond Glow" },
           { week: "6", treatment: "M Ultrasound Glow" },
           { week: "9", treatment: "M Diamond Ultrasound" },
-          { week: "12", treatment: "M Essential Facial" },
+          { week: "12", treatment: "M Journey Classic" },
         ],
         regulaererBehandlungswert: "506 €",
         treatmentOnly: "459 €",
@@ -665,12 +648,12 @@ const STUDIO_CONTENT = {
           "Trockene, lipidarme bzw. pflegebedürftige Haut mit Spannungsgefühl und reduziertem Hautkomfort.",
         fokus: "Feuchtigkeit + Lipide + Barriere + Regeneration",
         plan: [
-          { week: "0", treatment: "M Essential Facial" },
+          { week: "0", treatment: "M Journey Classic" },
           { week: "2", treatment: "M Ultrasound Glow" },
-          { week: "4", treatment: "M Essential Facial" },
+          { week: "4", treatment: "M Journey Classic" },
           { week: "6", treatment: "M Ultrasound Glow" },
           { week: "9", treatment: "regenerative saisonal passende Behandlung" },
-          { week: "12", treatment: "M Essential Facial" },
+          { week: "12", treatment: "M Journey Classic" },
         ],
         regulaererBehandlungswert: "466 €",
         treatmentOnly: "425 €",
@@ -689,10 +672,10 @@ const STUDIO_CONTENT = {
           "Reife bzw. regenerationsbedürftige Haut mit Linien sowie Elastizitäts- und Festigkeitsverlust.",
         fokus: "Regeneration + Anti-Aging + Wirkstoffversorgung",
         plan: [
-          { week: "0", treatment: "M Essential Facial" },
+          { week: "0", treatment: "M Journey Classic" },
           { week: "2", treatment: "M Ultrasound Glow" },
           { week: "4", treatment: "M Microneedling PRO" },
-          { week: "6", treatment: "M Essential Facial" },
+          { week: "6", treatment: "M Journey Classic" },
           { week: "8", treatment: "M Ultrasound Glow" },
           { week: "12", treatment: "M Microneedling PRO" },
         ],
@@ -778,12 +761,12 @@ const STUDIO_CONTENT = {
         hautziel: "Sensible, gestresste, reaktive bzw. gefäßlabile Haut.",
         fokus: "Beruhigung + Feuchtigkeit + Barrierestabilisierung",
         plan: [
-          { week: "0", treatment: "M Essential Facial" },
+          { week: "0", treatment: "M Journey Classic" },
           { week: "2", treatment: "M Ultrasound Glow" },
-          { week: "4", treatment: "M Essential Facial" },
+          { week: "4", treatment: "M Journey Classic" },
           { week: "6", treatment: "M Ultrasound Glow" },
-          { week: "9", treatment: "M Essential Facial" },
-          { week: "12", treatment: "M Essential Facial" },
+          { week: "9", treatment: "M Journey Classic" },
+          { week: "12", treatment: "M Journey Classic" },
         ],
         regulaererBehandlungswert: "446 €",
         treatmentOnly: "409 €",

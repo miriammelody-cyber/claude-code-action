@@ -1441,13 +1441,29 @@ section {
 .testimonial-details summary {
   cursor: pointer;
   list-style: none;
-  color: var(--color-accent);
-  font-weight: 600;
-  font-size: 0.82rem;
 }
 
 .testimonial-details summary::-webkit-details-marker {
   display: none;
+}
+
+.testimonial-preview {
+  display: block;
+  color: var(--color-text);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0 0 8px;
+}
+
+.testimonial-details[open] .testimonial-preview {
+  display: none;
+}
+
+.testimonial-read-more {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.82rem;
 }
 
 .testimonial-details .testimonial-text-full {
@@ -1483,28 +1499,4 @@ section {
   display: block;
   font-size: 0.72rem;
   color: var(--color-text-muted);
-}
-
-/* ---------- Testimonials CTA ---------- */
-.testimonials-cta {
-  text-align: center;
-  max-width: 560px;
-  margin: 48px auto 0;
-}
-
-.testimonials-cta h3 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin: 0 0 8px;
-  color: var(--color-text);
-}
-
-.testimonials-cta p {
-  color: var(--color-text-muted);
-  margin: 0 0 20px;
-}
-
-.testimonials-cta .hero-actions {
-  justify-content: center;
 }
