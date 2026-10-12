@@ -161,8 +161,8 @@ const STUDIO_CONTENT = {
     whatsappPrefillMessage:
       "Hallo M-Beauty, ich interessiere mich für eine Behandlung und würde gerne mehr erfahren.",
 
-    instagramUrl: "https://www.instagram.com/m.beauty.beauty.studio.krefeld/",
-    instagramHandle: "@m.beauty.beauty.studio.krefeld",
+    instagramUrl: "https://www.instagram.com/mbeauty.krefeld/",
+    instagramHandle: "@mbeauty.krefeld",
 
     email: "infombeautysuite@gmail.com",
 
