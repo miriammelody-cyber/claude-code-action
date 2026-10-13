@@ -196,18 +196,13 @@
   const bookingAccessCard = document.querySelector(
     "[data-booking-access-card]",
   );
-  const bookingAccessWaLink = waNumber
-    ? "https://wa.me/" +
-      waNumber +
-      "?text=" +
-      encodeURIComponent(bookingAccess.whatsappPrefillMessage || "")
-    : null;
+  const neukundeUrl = bookingAccess.neukundeUrl || null;
 
   document
-    .querySelectorAll("[data-booking-access-whatsapp-link]")
+    .querySelectorAll("[data-booking-access-neukunde-link]")
     .forEach((el) => {
-      if (bookingAccessWaLink) {
-        el.href = bookingAccessWaLink;
+      if (neukundeUrl) {
+        el.href = neukundeUrl;
         el.removeAttribute("hidden");
       } else {
         el.setAttribute("hidden", "hidden");
@@ -224,11 +219,7 @@
       }
     });
 
-  if (
-    bookingAccessCard &&
-    bookingAccess.heading &&
-    (bookingAccessWaLink || igLink)
-  ) {
+  if (bookingAccessCard && bookingAccess.heading && (neukundeUrl || igLink)) {
     bookingAccessCard.removeAttribute("hidden");
     document.querySelectorAll("[data-booking-access-heading]").forEach((el) => {
       el.textContent = bookingAccess.heading || "";

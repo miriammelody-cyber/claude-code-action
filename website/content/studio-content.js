@@ -174,16 +174,14 @@ const STUDIO_CONTENT = {
   // Zugang zur Buchungsplattform (separate, gesperrte Website)
   // -------------------------------------------------------------
   // Keine Buchungsfunktion auf dieser Seite selbst – nur ein Hinweis,
-  // dass es eine Buchungsplattform gibt, die erst nach persönlicher
-  // Freischaltung durch Miri zugänglich ist. Der WhatsApp-Button nutzt
-  // einen eigenen vorausgefüllten Text (Name/E-Mail-Abfrage), damit sie
-  // alle nötigen Angaben für die Freischaltung direkt erhält.
+  // dass es eine Buchungsplattform gibt. Neukunden melden sich direkt
+  // über neukundeUrl an (eigene Neukunden-Seite der Buchungsplattform,
+  // kein WhatsApp-Umweg mehr nötig); Instagram bleibt als Alternative.
   bookingAccess: {
     heading: "Terminbuchung über unsere Buchungsplattform",
     intro:
-      "Für die Terminbuchung nutzen wir zusätzlich eine eigene Buchungsplattform. Der Zugang wird aus Datenschutzgründen individuell freigeschaltet. Melde dich einfach mit deinem vollständigen Namen und deiner E-Mail-Adresse, dann schalte ich dir zeitnah einen Zugangslink frei.",
-    whatsappPrefillMessage:
-      "Hallo, ich würde gerne einen Termin über die Buchungsseite vereinbaren. Bitte schicke mir einen Zugangslink.\nVorname:\nNachname:\nE-Mail-Adresse:",
+      "Für die Terminbuchung nutzen wir eine eigene Buchungsplattform. Als Neukunde meldest du dich einfach direkt über den Button unten an – alternativ erreichst du uns auch per Instagram.",
+    neukundeUrl: "https://mbeauty-krefeld.de/neukunde?src=instagram",
   },
 
   // -------------------------------------------------------------
